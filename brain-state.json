@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-10T02:58:42.461Z",
-  "runs": 1,
+  "updatedAt": "2026-06-10T17:16:48.572Z",
+  "runs": 3,
   "meta": {
     "minConfidenceToBet": 12,
     "fadeStakeMultiplier": 0.7,
@@ -20,5 +20,109 @@
       "pushes": 0
     }
   },
-  "positions": {}
+  "positions": {
+    "948": {
+      "positionId": "948",
+      "signalRef": "mlb:401815698",
+      "sport": "mlb",
+      "match": "Los Angeles Dodgers @ Pittsburgh Pirates",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 13,
+      "reasons": [
+        "prop_stake_conviction",
+        "edge_label_skeptic_fade_away",
+        "edge_strength_strong_away"
+      ],
+      "stakeUsdc": 475,
+      "openedAt": "2026-06-10T17:16:44.446Z",
+      "graded": false
+    },
+    "949": {
+      "positionId": "949",
+      "signalRef": "mlb:401815699",
+      "sport": "mlb",
+      "match": "Minnesota Twins @ Detroit Tigers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 8,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home"
+      ],
+      "stakeUsdc": 95,
+      "openedAt": "2026-06-10T17:16:44.855Z",
+      "graded": false
+    },
+    "950": {
+      "positionId": "950",
+      "signalRef": "mlb:401815705",
+      "sport": "mlb",
+      "match": "Texas Rangers @ Kansas City Royals",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 8,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home"
+      ],
+      "stakeUsdc": 95,
+      "openedAt": "2026-06-10T17:16:45.571Z",
+      "graded": false
+    },
+    "951": {
+      "positionId": "951",
+      "signalRef": "mlb:401815702",
+      "sport": "mlb",
+      "match": "Seattle Mariners @ Baltimore Orioles",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 8,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home"
+      ],
+      "stakeUsdc": 95,
+      "openedAt": "2026-06-10T17:16:46.185Z",
+      "graded": false
+    },
+    "952": {
+      "positionId": "952",
+      "signalRef": "mlb:401815703",
+      "sport": "mlb",
+      "match": "St. Louis Cardinals @ New York Mets",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 8,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home"
+      ],
+      "stakeUsdc": 95,
+      "openedAt": "2026-06-10T17:16:47.210Z",
+      "graded": false
+    },
+    "953": {
+      "positionId": "953",
+      "signalRef": "mlb:401815708",
+      "sport": "mlb",
+      "match": "Houston Astros @ Los Angeles Angels",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 8,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home"
+      ],
+      "stakeUsdc": 95,
+      "openedAt": "2026-06-10T17:16:47.824Z",
+      "graded": false
+    }
+  }
 }

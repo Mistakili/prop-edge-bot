@@ -24,6 +24,9 @@ export const FACTOR_BASE = {
   edge_strength_strong_away: 4,
   edge_strength_moderate_home: 2,
   edge_strength_moderate_away: 2,
+  home_field_mlb: 6,
+  home_field_nhl: 5,
+  prop_stake_conviction: 3,
 };
 
 export function normalizeFactor(reason) {

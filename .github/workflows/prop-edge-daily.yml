@@ -2,8 +2,8 @@ name: Prop Edge Daily
 
 on:
   schedule:
-    # 5:00 PM US Eastern (21:00 UTC during EDT, 22:00 UTC during EST)
-    - cron: "0 21 * * *"
+    # Daily 6:12 PM W. Central Africa / 17:12 UTC
+    - cron: "12 17 * * *"
   workflow_dispatch:
 
 permissions:

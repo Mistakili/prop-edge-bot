@@ -91,6 +91,67 @@ function roundStake(n) {
   return Math.round(n * 100) / 100;
 }
 
+function researchFromPropOnly(propSignal, brain) {
+  const home = { score: 0, reasons: [], weights: [] };
+  const away = { score: 0, reasons: [], weights: [] };
+  const edgeSide = propSignal.side;
+
+  const add = (side, baseKey, reason) => {
+    const base = FACTOR_BASE[baseKey] ?? FACTOR_BASE[normalizeFromReason(reason)] ?? 0;
+    if (!base) return;
+    const applied = applyFactor(side, base, reason, brain);
+    side.weights.push({ reason, ...applied });
+  };
+
+  if (propSignal.sport === "mlb") add(home, "home_field_mlb", "home_field_mlb");
+  else if (propSignal.sport === "nhl") add(home, "home_field_nhl", "home_field_nhl");
+
+  if ((propSignal.recommendedStakePct ?? 0) >= 0.04) {
+    const side = edgeSide === "home" ? home : away;
+    add(side, "prop_stake_conviction", "prop_stake_conviction");
+  }
+
+  if (propSignal.edgeStrength === "STRONG") {
+    if (edgeSide === "home") add(away, "edge_label_skeptic_fade_home", "edge_label_skeptic_fade_home");
+    else add(away, "edge_label_skeptic_fade_away", "edge_label_skeptic_fade_away");
+    if (edgeSide === "home") {
+      home.score += FACTOR_BASE.edge_strength_strong_home * factorWeightInline("edge_strength_strong_home", brain);
+      home.reasons.push("edge_strength_strong_home");
+    } else {
+      away.score += FACTOR_BASE.edge_strength_strong_away * factorWeightInline("edge_strength_strong_away", brain);
+      away.reasons.push("edge_strength_strong_away");
+    }
+  } else if (propSignal.edgeStrength === "MODERATE") {
+    if (edgeSide === "home") add(home, "edge_strength_moderate_home", "edge_strength_moderate_home");
+    else add(away, "edge_strength_moderate_away", "edge_strength_moderate_away");
+  }
+
+  const researchPick = home.score >= away.score ? "home" : "away";
+  const confidence = Math.abs(home.score - away.score);
+  const agreesWithEdge = researchPick === edgeSide;
+  const winningSide = researchPick === "home" ? home : away;
+
+  return {
+    source: "prop_only",
+    researchPick,
+    edgePick: edgeSide,
+    agreesWithEdge,
+    fadedEdge: !agreesWithEdge,
+    confidence,
+    homeScore: home.score,
+    awayScore: away.score,
+    reasons: winningSide.reasons,
+    factorWeights: winningSide.weights,
+    edgeInsight: {
+      strength: propSignal.edgeStrength,
+      modelSpread: null,
+      lineSpread: propSignal.lineSpread,
+      edge: null,
+      edgeSide: edgeSide,
+    },
+  };
+}
+
 function researchGame(game, propSignal, brain) {
   const home = { score: 0, reasons: [], weights: [] };
   const away = { score: 0, reasons: [], weights: [] };
@@ -164,6 +225,7 @@ function researchGame(game, propSignal, brain) {
   const winningSide = researchPick === "home" ? home : away;
 
   return {
+    source: "edge_api",
     researchPick,
     edgePick: edgeSide,
     agreesWithEdge,
@@ -276,7 +338,8 @@ async function main() {
   summary.bankBefore = bank;
   summary.statsBefore = stats;
 
-  const minConfidence = brain.meta.minConfidenceToBet ?? strategy.minConfidenceToBet;
+  const minConfidenceEdge = brain.meta.minConfidenceToBet ?? strategy.minConfidenceToBet;
+  const minConfidencePropOnly = strategy.propOnlyMinConfidence ?? minConfidenceEdge;
 
   const [edgeData, { signals = [] }, { positions: openPositions = [] }] = await Promise.all([
     fetchEdgeResearch(),
@@ -295,14 +358,12 @@ async function main() {
     if (!ref) continue;
 
     const game = gamesById.get(propSignal.gameId);
-    if (!game) {
-      summary.skipped.push({ signalRef: ref, reason: "no_edge_research_data" });
-      continue;
-    }
-
-    const research = researchGame(game, propSignal, brain);
+    const research = game
+      ? researchGame(game, propSignal, brain)
+      : researchFromPropOnly(propSignal, brain);
     summary.research.push({
       signalRef: ref,
+      source: research.source,
       match: `${propSignal.awayTeam} @ ${propSignal.homeTeam}`,
       edgePick: research.edgePick,
       researchPick: research.researchPick,
@@ -322,15 +383,23 @@ async function main() {
     candidates.push({ propSignal, research });
   }
 
-  candidates.sort((a, b) => b.research.confidence - a.research.confidence);
+  const sportRank = new Map(strategy.sportPriority.map((s, i) => [s, i]));
+  candidates.sort((a, b) => {
+    const confDiff = b.research.confidence - a.research.confidence;
+    if (confDiff !== 0) return confDiff;
+    return (sportRank.get(a.propSignal.sport) ?? 99) - (sportRank.get(b.propSignal.sport) ?? 99);
+  });
 
   for (const { propSignal, research } of candidates) {
     const ref = propSignal.signalRef;
+    const minConfidence =
+      research.source === "prop_only" ? minConfidencePropOnly : minConfidenceEdge;
 
     if (research.confidence < minConfidence) {
       summary.skipped.push({
         signalRef: ref,
         reason: "low_confidence",
+        source: research.source,
         confidence: research.confidence,
         minRequired: minConfidence,
         researchPick: research.researchPick,

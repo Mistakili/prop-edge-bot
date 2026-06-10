@@ -9,6 +9,7 @@
     "minStakeUsdc": 1,
     "sportPriority": ["nba", "mlb", "nhl"],
     "minConfidenceToBet": 12,
+    "propOnlyMinConfidence": 6,
     "fadeStakeMultiplier": 0.7,
     "agreeStakeMultiplier": 1.0,
     "strongStakePct": { "min": 0.04, "max": 0.08, "default": 0.06 },
