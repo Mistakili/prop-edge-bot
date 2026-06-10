@@ -1,16 +1,26 @@
 #!/usr/bin/env node
 /**
- * Prop Edge autonomous runner — Edge is insight, not gospel.
- * Researches each game independently, may agree or fade Edge.
+ * Prop Edge autonomous runner — self-improving independent research.
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  loadBrain,
+  saveBrain,
+  applyFactor,
+  gradeSettlements,
+  tuneMeta,
+  registerPosition,
+  brainSummary,
+  FACTOR_BASE,
+} from "./brain.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const config = JSON.parse(readFileSync(join(__dirname, "prop-edge-config.json"), "utf8"));
 const logDir = process.env.PROP_EDGE_LOG_DIR ?? join(__dirname, "logs");
+const brainPath = process.env.BRAIN_STATE_PATH ?? join(__dirname, "brain-state.json");
 
 const { userId, displayName, mcpUrl, apiBase, edgeApi, strategy } = config;
 let rpcId = 0;
@@ -61,7 +71,7 @@ async function fetchEdgeResearch() {
   return res.json();
 }
 
-// ─── Research engine (Edge = one input, not the decision) ────────────────────
+// ─── Research engine (learned weights from brain) ────────────────────────────
 
 function parseRecord(rec) {
   if (!rec || typeof rec !== "string") return null;
@@ -81,108 +91,77 @@ function roundStake(n) {
   return Math.round(n * 100) / 100;
 }
 
-/**
- * Independent game analysis. Returns scores for home/away and a research narrative.
- * Edge signal is compared but does NOT dictate the pick.
- */
-function researchGame(game, propSignal) {
-  const home = { score: 0, reasons: [] };
-  const away = { score: 0, reasons: [] };
+function researchGame(game, propSignal, brain) {
+  const home = { score: 0, reasons: [], weights: [] };
+  const away = { score: 0, reasons: [], weights: [] };
   const edgeSide = propSignal.side;
 
-  // 1. Season record — who's actually the better team?
+  const add = (side, baseKey, reason) => {
+    const base = FACTOR_BASE[baseKey] ?? FACTOR_BASE[normalizeFromReason(reason)] ?? 0;
+    if (!base) return;
+    const applied = applyFactor(side, base, reason, brain);
+    side.weights.push({ reason, ...applied });
+  };
+
   const homeRec = parseRecord(game.homeRecord);
   const awayRec = parseRecord(game.awayRecord);
   if (homeRec && awayRec) {
     const diff = homeRec.pct - awayRec.pct;
-    if (diff > 0.08) {
-      home.score += 8;
-      home.reasons.push(`record_edge_home_${(diff * 100).toFixed(0)}pp`);
-    } else if (diff < -0.08) {
-      away.score += 8;
-      away.reasons.push(`record_edge_away_${(-diff * 100).toFixed(0)}pp`);
-    }
+    if (diff > 0.08) add(home, "record_edge_home", `record_edge_home_${(diff * 100).toFixed(0)}pp`);
+    else if (diff < -0.08) add(away, "record_edge_away", `record_edge_away_${(-diff * 100).toFixed(0)}pp`);
   }
 
-  // 2. Rest / B2B — fatigue matters
-  if (game.homeIsB2B) {
-    away.score += 6;
-    away.reasons.push("home_b2b");
-  }
-  if (game.awayIsB2B) {
-    home.score += 6;
-    home.reasons.push("away_b2b");
-  }
-  if (game.homeRestDays > game.awayRestDays + 1) {
-    home.score += 4;
-    home.reasons.push("home_rest_advantage");
-  }
-  if (game.awayRestDays > game.homeRestDays + 1) {
-    away.score += 4;
-    away.reasons.push("away_rest_advantage");
-  }
+  if (game.homeIsB2B) add(away, "home_b2b", "home_b2b");
+  if (game.awayIsB2B) add(home, "away_b2b", "away_b2b");
+  if (game.homeRestDays > game.awayRestDays + 1) add(home, "home_rest_advantage", "home_rest_advantage");
+  if (game.awayRestDays > game.homeRestDays + 1) add(away, "away_rest_advantage", "away_rest_advantage");
 
-  // 3. Line value — model vs market (is Edge's number justified?)
   if (game.modelSpread != null && game.lineSpread != null) {
-    const model = Number(game.modelSpread);
-    const line = Number(game.lineSpread);
-    const value = model - line; // negative favours home cover
-    if (value < -0.5) {
-      home.score += 10;
-      home.reasons.push(`line_value_home_${value.toFixed(1)}`);
-    } else if (value > 0.5) {
-      away.score += 10;
-      away.reasons.push(`line_value_away_${value.toFixed(1)}`);
-    }
+    const value = Number(game.modelSpread) - Number(game.lineSpread);
+    if (value < -0.5) add(home, "line_value_home", `line_value_home_${value.toFixed(1)}`);
+    else if (value > 0.5) add(away, "line_value_away", `line_value_away_${value.toFixed(1)}`);
   }
 
-  // 4. Line movement — steam / sharp action since open
   if (game.openSpread != null && game.lineSpread != null) {
     const move = Number(game.lineSpread) - Number(game.openSpread);
-    if (move < -0.5) {
-      home.score += 5;
-      home.reasons.push("line_steam_home");
-    } else if (move > 0.5) {
-      away.score += 5;
-      away.reasons.push("line_steam_away");
-    }
+    if (move < -0.5) add(home, "line_steam_home", "line_steam_home");
+    else if (move > 0.5) add(away, "line_steam_away", "line_steam_away");
   }
 
-  // 5. Edge model sanity check — STRONG with zero edge is a red flag
   const edgeVal = Number(game.edge ?? 0);
   const edgeSideDeclared = game.edgeSide;
   if (propSignal.edgeStrength === "STRONG" && edgeVal === 0 && edgeSideDeclared === "NONE") {
-    // Edge label looks inflated — discount Edge side, boost opposite
-    if (edgeSide === "home") {
-      away.score += 12;
-      away.reasons.push("edge_label_skeptic_fade_home");
-    } else {
-      home.score += 12;
-      home.reasons.push("edge_label_skeptic_fade_away");
-    }
+    if (edgeSide === "home") add(away, "edge_label_skeptic_fade_home", "edge_label_skeptic_fade_home");
+    else add(home, "edge_label_skeptic_fade_away", "edge_label_skeptic_fade_away");
   } else if (edgeSideDeclared === "home") {
-    home.score += 6;
-    home.reasons.push("edge_model_lean_home");
+    add(home, "edge_model_lean_home", "edge_model_lean_home");
   } else if (edgeSideDeclared === "away") {
-    away.score += 6;
-    away.reasons.push("edge_model_lean_away");
+    add(away, "edge_model_lean_away", "edge_model_lean_away");
   }
 
-  // 6. Edge strength as soft signal only (not a command)
-  if (propSignal.edgeStrength === "STRONG" && edgeSide === "home") home.score += 4;
-  if (propSignal.edgeStrength === "STRONG" && edgeSide === "away") away.score += 4;
-  if (propSignal.edgeStrength === "MODERATE" && edgeSide === "home") home.score += 2;
-  if (propSignal.edgeStrength === "MODERATE" && edgeSide === "away") away.score += 2;
-
-  // 7. Playoff flag — tighter games, home court slightly more
-  if (game.isPlayoff) {
-    home.score += 3;
-    home.reasons.push("playoff_home_court");
+  if (propSignal.edgeStrength === "STRONG" && edgeSide === "home") {
+    home.score += FACTOR_BASE.edge_strength_strong_home * factorWeightInline("edge_strength_strong_home", brain);
+    home.reasons.push("edge_strength_strong_home");
   }
+  if (propSignal.edgeStrength === "STRONG" && edgeSide === "away") {
+    away.score += FACTOR_BASE.edge_strength_strong_away * factorWeightInline("edge_strength_strong_away", brain);
+    away.reasons.push("edge_strength_strong_away");
+  }
+  if (propSignal.edgeStrength === "MODERATE" && edgeSide === "home") {
+    home.score += FACTOR_BASE.edge_strength_moderate_home * factorWeightInline("edge_strength_moderate_home", brain);
+    home.reasons.push("edge_strength_moderate_home");
+  }
+  if (propSignal.edgeStrength === "MODERATE" && edgeSide === "away") {
+    away.score += FACTOR_BASE.edge_strength_moderate_away * factorWeightInline("edge_strength_moderate_away", brain);
+    away.reasons.push("edge_strength_moderate_away");
+  }
+
+  if (game.isPlayoff) add(home, "playoff_home_court", "playoff_home_court");
 
   const researchPick = home.score >= away.score ? "home" : "away";
   const confidence = Math.abs(home.score - away.score);
   const agreesWithEdge = researchPick === edgeSide;
+  const winningSide = researchPick === "home" ? home : away;
 
   return {
     researchPick,
@@ -192,7 +171,8 @@ function researchGame(game, propSignal) {
     confidence,
     homeScore: home.score,
     awayScore: away.score,
-    reasons: researchPick === "home" ? home.reasons : away.reasons,
+    reasons: winningSide.reasons,
+    factorWeights: winningSide.weights,
     edgeInsight: {
       strength: propSignal.edgeStrength,
       modelSpread: game.modelSpread,
@@ -203,21 +183,36 @@ function researchGame(game, propSignal) {
   };
 }
 
-function computeStakePct(propSignal, stats, research) {
+function normalizeFromReason(reason) {
+  if (reason.startsWith("record_edge_home")) return "record_edge_home";
+  if (reason.startsWith("record_edge_away")) return "record_edge_away";
+  if (reason.startsWith("line_value_home")) return "line_value_home";
+  if (reason.startsWith("line_value_away")) return "line_value_away";
+  return reason;
+}
+
+function factorWeightInline(key, brain) {
+  const f = brain.factors[key] ?? { wins: 0, losses: 0 };
+  const n = f.wins + f.losses;
+  if (n < 3) return 1.0;
+  const wr = f.wins / n;
+  return clamp(0.5 + (wr - 0.5) * 1.5, 0.35, 1.65);
+}
+
+function computeStakePct(propSignal, stats, research, brain) {
   const isStrong = propSignal.edgeStrength === "STRONG";
   const tier = isStrong ? strategy.strongStakePct : strategy.moderateStakePct;
   let pct = tier.default;
 
   const settled = stats.settledCount ?? 0;
   const roi = (stats.roiPct ?? 0) / 100;
+  const meta = brain.meta;
 
-  // Confidence scaling
   if (research.confidence >= 20) pct += 0.01;
   if (research.confidence < 15) pct -= 0.01;
 
-  // Fading Edge is higher conviction required but smaller size
-  if (research.fadedEdge) pct *= strategy.fadeStakeMultiplier;
-  else pct *= strategy.agreeStakeMultiplier;
+  if (research.fadedEdge) pct *= meta.fadeStakeMultiplier ?? strategy.fadeStakeMultiplier;
+  else pct *= meta.agreeStakeMultiplier ?? strategy.agreeStakeMultiplier;
 
   if (roi < -0.05) pct -= 0.015;
   if (settled < 10) pct = Math.min(pct, isStrong ? 0.05 : 0.02);
@@ -240,23 +235,48 @@ function computeMaxExposurePct(stats) {
 async function main() {
   mkdirSync(logDir, { recursive: true });
   const startedAt = new Date().toISOString();
+  const brain = loadBrain(brainPath);
+  brain.runs += 1;
+
   const summary = {
     startedAt,
     displayName,
-    mode: strategy.mode,
+    mode: "self-improving",
     picks: [],
     skipped: [],
     errors: [],
     research: [],
   };
 
-  console.log(`[prop-edge] ${startedAt} — ${displayName} (independent research mode)`);
+  console.log(`[prop-edge] ${startedAt} — ${displayName} (self-improving mode, run #${brain.runs})`);
+
+  // ── Learn from settled picks first ──
+  let settledPositions = [];
+  try {
+    const settled = await mcpCall("prop_my_positions", { status: "settled" });
+    settledPositions = settled.positions ?? [];
+    const graded = gradeSettlements(brain, settledPositions);
+    if (graded.length) {
+      console.log(`[brain] Graded ${graded.length} newly settled position(s)`);
+      for (const g of graded) {
+        console.log(`[brain]  #${g.positionId} ${g.outcome.toUpperCase()} ${g.fadedEdge ? "FADE" : "AGREE"} pnl=${g.pnlUsdc}`);
+      }
+    }
+    tuneMeta(brain, strategy);
+    console.log(`[brain] meta: minConf=${brain.meta.minConfidenceToBet} fadeMult=${brain.meta.fadeStakeMultiplier?.toFixed(2)}`);
+  } catch (e) {
+    console.warn(`[brain] Settlement grading skipped: ${e.message}`);
+  }
+
+  summary.brainBefore = brainSummary(brain);
 
   const me = await ensureDisplayName();
   const stats = me.stats ?? {};
   const bank = stats.bankUsdc ?? 10000;
   summary.bankBefore = bank;
   summary.statsBefore = stats;
+
+  const minConfidence = brain.meta.minConfidenceToBet ?? strategy.minConfidenceToBet;
 
   const [edgeData, { signals = [] }, { positions: openPositions = [] }] = await Promise.all([
     fetchEdgeResearch(),
@@ -268,7 +288,6 @@ async function main() {
   const openRefs = new Set(openPositions.map((p) => p.signalRef));
   const maxExposure = bank * computeMaxExposurePct(stats);
   let exposureUsed = 0;
-
   const candidates = [];
 
   for (const propSignal of signals) {
@@ -281,7 +300,7 @@ async function main() {
       continue;
     }
 
-    const research = researchGame(game, propSignal);
+    const research = researchGame(game, propSignal, brain);
     summary.research.push({
       signalRef: ref,
       match: `${propSignal.awayTeam} @ ${propSignal.homeTeam}`,
@@ -290,6 +309,7 @@ async function main() {
       fadedEdge: research.fadedEdge,
       confidence: research.confidence,
       reasons: research.reasons,
+      factorWeights: research.factorWeights,
       edgeInsight: research.edgeInsight,
       alreadyOpen: openRefs.has(ref),
     });
@@ -307,18 +327,19 @@ async function main() {
   for (const { propSignal, research } of candidates) {
     const ref = propSignal.signalRef;
 
-    if (research.confidence < strategy.minConfidenceToBet) {
+    if (research.confidence < minConfidence) {
       summary.skipped.push({
         signalRef: ref,
         reason: "low_confidence",
         confidence: research.confidence,
+        minRequired: minConfidence,
         researchPick: research.researchPick,
         edgePick: research.edgePick,
       });
       continue;
     }
 
-    const pct = computeStakePct(propSignal, stats, research);
+    const pct = computeStakePct(propSignal, stats, research, brain);
     let stake = roundStake(bank * pct);
     if (stake < strategy.minStakeUsdc) stake = strategy.minStakeUsdc;
 
@@ -338,8 +359,9 @@ async function main() {
 
       exposureUsed += result.stakeUsdc ?? stake;
       const action = research.fadedEdge ? "FADE" : "AGREE";
-      summary.picks.push({
+      const pick = {
         signalRef: ref,
+        sport: propSignal.sport,
         action,
         match: `${propSignal.awayTeam} @ ${propSignal.homeTeam}`,
         edgePick: research.edgePick,
@@ -351,10 +373,12 @@ async function main() {
         stakeUsdc: result.stakeUsdc ?? stake,
         positionId: result.positionId,
         bankAfter: result.bankAfter,
-      });
+      };
+      summary.picks.push(pick);
+      registerPosition(brain, pick);
 
       console.log(
-        `[prop-edge] ${action} ${ref} → ${research.researchPick} ${(pct * 100).toFixed(1)}% $${result.stakeUsdc ?? stake} (conf ${research.confidence})`,
+        `[prop-edge] ${action} ${ref} → ${research.researchPick} ${(pct * 100).toFixed(1)}% $${pick.stakeUsdc} (conf ${research.confidence})`,
       );
     } catch (err) {
       summary.errors.push({ signalRef: ref, error: err.message });
@@ -384,8 +408,12 @@ async function main() {
     summary.leaderboardError = e.message;
   }
 
+  summary.brainAfter = brainSummary(brain);
   summary.finishedAt = new Date().toISOString();
   summary.picksPlaced = summary.picks.length;
+
+  saveBrain(brainPath, brain);
+  console.log(`[brain] Saved → ${brainPath}`);
 
   const logPath = join(logDir, `${startedAt.slice(0, 10)}.json`);
   let existing = [];

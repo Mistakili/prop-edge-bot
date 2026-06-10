@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-10T02:58:42.461Z",
+  "runs": 1,
+  "meta": {
+    "minConfidenceToBet": 12,
+    "fadeStakeMultiplier": 0.7,
+    "agreeStakeMultiplier": 1
+  },
+  "factors": {},
+  "decisions": {
+    "agree": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0
+    },
+    "fade": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0
+    }
+  },
+  "positions": {}
+}
