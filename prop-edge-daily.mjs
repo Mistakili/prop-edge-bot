@@ -247,6 +247,7 @@ async function main() {
     picks: [],
     skipped: [],
     errors: [],
+    research: [],
   };
 
   console.log(`[prop-edge] ${startedAt} — ${displayName} (independent research mode)`);
@@ -272,10 +273,7 @@ async function main() {
 
   for (const propSignal of signals) {
     const ref = propSignal.signalRef;
-    if (!ref || openRefs.has(ref)) {
-      summary.skipped.push({ signalRef: ref, reason: "already_open" });
-      continue;
-    }
+    if (!ref) continue;
 
     const game = gamesById.get(propSignal.gameId);
     if (!game) {
@@ -284,20 +282,27 @@ async function main() {
     }
 
     const research = researchGame(game, propSignal);
+    summary.research.push({
+      signalRef: ref,
+      match: `${propSignal.awayTeam} @ ${propSignal.homeTeam}`,
+      edgePick: research.edgePick,
+      researchPick: research.researchPick,
+      fadedEdge: research.fadedEdge,
+      confidence: research.confidence,
+      reasons: research.reasons,
+      edgeInsight: research.edgeInsight,
+      alreadyOpen: openRefs.has(ref),
+    });
+
+    if (openRefs.has(ref)) {
+      summary.skipped.push({ signalRef: ref, reason: "already_open" });
+      continue;
+    }
+
     candidates.push({ propSignal, research });
   }
 
   candidates.sort((a, b) => b.research.confidence - a.research.confidence);
-  summary.research = candidates.map(({ propSignal, research }) => ({
-    signalRef: propSignal.signalRef,
-    match: `${propSignal.awayTeam} @ ${propSignal.homeTeam}`,
-    edgePick: research.edgePick,
-    researchPick: research.researchPick,
-    fadedEdge: research.fadedEdge,
-    confidence: research.confidence,
-    reasons: research.reasons,
-    edgeInsight: research.edgeInsight,
-  }));
 
   for (const { propSignal, research } of candidates) {
     const ref = propSignal.signalRef;
