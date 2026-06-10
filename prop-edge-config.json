@@ -1,0 +1,20 @@
+{
+  "userId": "1d4d0e25-8a35-4007-8a4f-c8d6c5c4f7c0",
+  "displayName": "Soliris-Syndicate",
+  "mcpUrl": "https://soliris.pro/mcp",
+  "apiBase": "https://soliris.pro/api/prop",
+  "edgeApi": "https://soliris.pro/api/edge/signals",
+  "strategy": {
+    "mode": "independent",
+    "minStakeUsdc": 1,
+    "sportPriority": ["nba", "mlb", "nhl"],
+    "minConfidenceToBet": 12,
+    "fadeStakeMultiplier": 0.7,
+    "agreeStakeMultiplier": 1.0,
+    "strongStakePct": { "min": 0.04, "max": 0.08, "default": 0.06 },
+    "moderateStakePct": { "min": 0.01, "max": 0.03, "default": 0.02 },
+    "maxDailyExposurePct": { "min": 0.1, "max": 0.2, "default": 0.15 },
+    "minSettledForAggression": 25,
+    "bankFloorUsdc": 8500
+  }
+}

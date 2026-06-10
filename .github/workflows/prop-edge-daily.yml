@@ -1,0 +1,32 @@
+name: Prop Edge Daily
+
+on:
+  schedule:
+    # 5:00 PM US Eastern (21:00 UTC during EDT, 22:00 UTC during EST)
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+jobs:
+  picks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run Prop Edge bot
+        env:
+          PROP_EDGE_LOG_DIR: ${{ github.workspace }}/logs
+        run: node prop-edge-daily.mjs
+
+      - name: Upload run log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prop-edge-logs-${{ github.run_id }}
+          path: logs/
+          retention-days: 30
