@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-11T19:44:46.345Z",
-  "runs": 4,
+  "updatedAt": "2026-06-12T19:21:23.224Z",
+  "runs": 5,
   "meta": {
-    "minConfidenceToBet": 13,
+    "minConfidenceToBet": 14,
     "fadeStakeMultiplier": 0.7,
     "agreeStakeMultiplier": 0.8666666666666666
   },
