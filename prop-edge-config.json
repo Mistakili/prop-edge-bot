@@ -8,7 +8,7 @@
     "mode": "independent",
     "alwaysPlaySignals": true,
     "minStakeUsdc": 1,
-    "sportPriority": ["nba", "fifa", "mlb", "nhl"],
+    "sportPriority": ["nba", "soccer", "fifa", "mlb", "nhl"],
     "minConfidenceToBet": 12,
     "propOnlyMinConfidence": 6,
     "lightSlateMaxSignals": 2,

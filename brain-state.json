@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-13T17:07:11.552Z",
-  "runs": 8,
+  "updatedAt": "2026-06-13T17:12:47.482Z",
+  "runs": 9,
   "meta": {
     "minConfidenceToBet": 14,
     "fadeStakeMultiplier": 0.7,
@@ -438,6 +438,74 @@
       ],
       "stakeUsdc": 76.2,
       "openedAt": "2026-06-13T17:07:10.695Z",
+      "graded": false
+    },
+    "1077": {
+      "positionId": "1077",
+      "signalRef": "soccer:760420",
+      "sport": "soccer",
+      "match": "Switzerland @ Qatar",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 68.58,
+      "openedAt": "2026-06-13T17:12:45.532Z",
+      "graded": false
+    },
+    "1078": {
+      "positionId": "1078",
+      "signalRef": "soccer:760419",
+      "sport": "soccer",
+      "match": "Morocco @ Brazil",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 68.58,
+      "openedAt": "2026-06-13T17:12:45.931Z",
+      "graded": false
+    },
+    "1079": {
+      "positionId": "1079",
+      "signalRef": "soccer:760418",
+      "sport": "soccer",
+      "match": "Scotland @ Haiti",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 68.58,
+      "openedAt": "2026-06-13T17:12:46.335Z",
+      "graded": false
+    },
+    "1080": {
+      "positionId": "1080",
+      "signalRef": "mlb:401815748",
+      "sport": "mlb",
+      "match": "Tampa Bay Rays @ Los Angeles Angels",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 68.58,
+      "openedAt": "2026-06-13T17:12:46.751Z",
       "graded": false
     }
   }

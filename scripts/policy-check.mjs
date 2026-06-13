@@ -35,7 +35,9 @@ function researchFromPropOnly(propSignal, brain) {
   };
   if (propSignal.sport === "mlb") add(home, "home_field_mlb", "home_field_mlb");
   else if (propSignal.sport === "nhl") add(home, "home_field_nhl", "home_field_nhl");
-  else if (propSignal.sport === "fifa") add(home, "home_field_fifa", "home_field_fifa");
+  else if (propSignal.sport === "fifa" || propSignal.sport === "soccer") {
+    add(home, "home_field_fifa", "home_field_fifa");
+  }
   if ((propSignal.recommendedStakePct ?? 0) >= 0.04) {
     const side = edgeSide === "home" ? home : away;
     add(side, "prop_stake_conviction", "prop_stake_conviction");
