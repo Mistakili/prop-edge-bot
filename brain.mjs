@@ -26,6 +26,7 @@ export const FACTOR_BASE = {
   edge_strength_moderate_away: 2,
   home_field_mlb: 6,
   home_field_nhl: 5,
+  home_field_fifa: 3,
   prop_stake_conviction: 3,
 };
 

@@ -105,6 +105,7 @@ function researchFromPropOnly(propSignal, brain) {
 
   if (propSignal.sport === "mlb") add(home, "home_field_mlb", "home_field_mlb");
   else if (propSignal.sport === "nhl") add(home, "home_field_nhl", "home_field_nhl");
+  else if (propSignal.sport === "fifa") add(home, "home_field_fifa", "home_field_fifa");
 
   if ((propSignal.recommendedStakePct ?? 0) >= 0.04) {
     const side = edgeSide === "home" ? home : away;
@@ -333,16 +334,25 @@ function resolveBetDecision(research, propSignal, signalCount, brain) {
       ? (strategy.strongMinConfidence ?? 4)
       : Math.max(research.confidence, strategy.followEdgeMinConfidence ?? 4);
 
+  const pickSide =
+    propSignal.suggestedSide === "home" || propSignal.suggestedSide === "away"
+      ? propSignal.suggestedSide
+      : edgeSide;
+
   return {
-    pickSide: edgeSide,
+    pickSide,
     action: "FOLLOW_EDGE",
     fadedEdge: false,
     decisionMode: "follow_edge",
     effectiveConfidence: followConf,
     minConfidence,
     reasons: strongTie
-      ? ["strong_tie_follow_edge", `edge_${propSignal.edgeStrength.toLowerCase()}_${edgeSide}`]
-      : ["follow_edge_no_clear_signal", `edge_${propSignal.edgeStrength.toLowerCase()}_${edgeSide}`],
+      ? ["strong_tie_follow_edge", `edge_${propSignal.edgeStrength.toLowerCase()}_${pickSide}`]
+      : [
+          "follow_edge_no_clear_signal",
+          `edge_${propSignal.edgeStrength.toLowerCase()}_${pickSide}`,
+          ...(pickSide !== edgeSide ? ["platform_suggested_side"] : []),
+        ],
   };
 }
 

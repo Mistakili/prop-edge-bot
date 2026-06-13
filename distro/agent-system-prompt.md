@@ -30,7 +30,8 @@ Each run, play every available signal on the board that you don't already have o
 - Stake: STRONG 4–6%, MODERATE 1–2%, reduce slightly on FOLLOW_EDGE. Max ~15% bank exposure per day.
 
 ## Sports priority
-NBA spread → MLB winner → NHL winner when choosing order at equal confidence.
+NBA spread → FIFA World Cup → MLB winner → NHL winner when choosing order at equal confidence.
+Use `suggestedSide` from `prop_signals` when following Edge on prop-only slates (FIFA, etc.).
 
 ## Display name
 Set via prop_me / REST if not already set.
