@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-13T09:42:11.304Z",
-  "runs": 6,
+  "updatedAt": "2026-06-13T15:07:21.452Z",
+  "runs": 7,
   "meta": {
     "minConfidenceToBet": 14,
     "fadeStakeMultiplier": 0.7,
@@ -200,6 +200,74 @@
       ],
       "stakeUsdc": 89.13,
       "openedAt": "2026-06-13T09:42:10.495Z",
+      "graded": false
+    },
+    "1040": {
+      "positionId": "1040",
+      "signalRef": "mlb:401815747",
+      "sport": "mlb",
+      "match": "Colorado Rockies @ Athletics",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 338.68,
+      "openedAt": "2026-06-13T15:07:19.518Z",
+      "graded": false
+    },
+    "1041": {
+      "positionId": "1041",
+      "signalRef": "mlb:401815744",
+      "sport": "mlb",
+      "match": "Philadelphia Phillies @ Milwaukee Brewers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 338.68,
+      "openedAt": "2026-06-13T15:07:19.909Z",
+      "graded": false
+    },
+    "1042": {
+      "positionId": "1042",
+      "signalRef": "mlb:401815735",
+      "sport": "mlb",
+      "match": "Atlanta Braves @ New York Mets",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 84.67,
+      "openedAt": "2026-06-13T15:07:20.344Z",
+      "graded": false
+    },
+    "1043": {
+      "positionId": "1043",
+      "signalRef": "mlb:401815736",
+      "sport": "mlb",
+      "match": "Detroit Tigers @ Cleveland Guardians",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 84.67,
+      "openedAt": "2026-06-13T15:07:20.740Z",
       "graded": false
     }
   }

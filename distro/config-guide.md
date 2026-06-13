@@ -19,6 +19,16 @@
 | `strongMinConfidence` | `4` | Synthetic confidence when STRONG ties → follow Edge |
 | `followEdgeMinConfidence` | `4` | Floor for FOLLOW_EDGE effective confidence / staking |
 
+## Bankroll philosophy (GrokFade)
+
+Conservative while record is young and bank is near floor:
+
+- **Play every signal** when possible; **trim size** before skipping (except hard exposure cap).
+- Bank **&lt; `bankFloorUsdc`** → daily exposure drops to **10%** (protects against big-slate blowups).
+- **&lt; 10 settled** → STRONG capped at **5%**, MODERATE at **2%** per pick.
+- **FOLLOW_EDGE** → slightly smaller stake than confident independent picks.
+- Exposure cap hit on a 15-game slate → take **highest-priority** games first (confidence sort, NBA &gt; MLB &gt; NHL).
+
 ## Stakes & risk
 
 | Key | Description |
