@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-13T15:07:21.452Z",
-  "runs": 7,
+  "updatedAt": "2026-06-13T17:07:11.552Z",
+  "runs": 8,
   "meta": {
     "minConfidenceToBet": 14,
     "fadeStakeMultiplier": 0.7,
@@ -268,6 +268,176 @@
       ],
       "stakeUsdc": 84.67,
       "openedAt": "2026-06-13T15:07:20.740Z",
+      "graded": false
+    },
+    "1067": {
+      "positionId": "1067",
+      "signalRef": "mlb:401815742",
+      "sport": "mlb",
+      "match": "Houston Astros @ Kansas City Royals",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 76.2,
+      "openedAt": "2026-06-13T17:07:06.600Z",
+      "graded": false
+    },
+    "1068": {
+      "positionId": "1068",
+      "signalRef": "mlb:401815746",
+      "sport": "mlb",
+      "match": "Chicago Cubs @ San Francisco Giants",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 76.2,
+      "openedAt": "2026-06-13T17:07:07.052Z",
+      "graded": false
+    },
+    "1069": {
+      "positionId": "1069",
+      "signalRef": "mlb:401815738",
+      "sport": "mlb",
+      "match": "New York Yankees @ Toronto Blue Jays",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 76.2,
+      "openedAt": "2026-06-13T17:07:07.461Z",
+      "graded": false
+    },
+    "1070": {
+      "positionId": "1070",
+      "signalRef": "mlb:401815737",
+      "sport": "mlb",
+      "match": "Miami Marlins @ Pittsburgh Pirates",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 76.2,
+      "openedAt": "2026-06-13T17:07:07.880Z",
+      "graded": false
+    },
+    "1071": {
+      "positionId": "1071",
+      "signalRef": "mlb:401815739",
+      "sport": "mlb",
+      "match": "San Diego Padres @ Baltimore Orioles",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 76.2,
+      "openedAt": "2026-06-13T17:07:08.330Z",
+      "graded": false
+    },
+    "1072": {
+      "positionId": "1072",
+      "signalRef": "mlb:401815740",
+      "sport": "mlb",
+      "match": "Seattle Mariners @ Washington Nationals",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 76.2,
+      "openedAt": "2026-06-13T17:07:08.797Z",
+      "graded": false
+    },
+    "1073": {
+      "positionId": "1073",
+      "signalRef": "mlb:401815745",
+      "sport": "mlb",
+      "match": "St. Louis Cardinals @ Minnesota Twins",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 76.2,
+      "openedAt": "2026-06-13T17:07:09.435Z",
+      "graded": false
+    },
+    "1074": {
+      "positionId": "1074",
+      "signalRef": "mlb:401815734",
+      "sport": "mlb",
+      "match": "Arizona Diamondbacks @ Cincinnati Reds",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 76.2,
+      "openedAt": "2026-06-13T17:07:09.866Z",
+      "graded": false
+    },
+    "1075": {
+      "positionId": "1075",
+      "signalRef": "mlb:401815741",
+      "sport": "mlb",
+      "match": "Texas Rangers @ Boston Red Sox",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 76.2,
+      "openedAt": "2026-06-13T17:07:10.282Z",
+      "graded": false
+    },
+    "1076": {
+      "positionId": "1076",
+      "signalRef": "mlb:401815743",
+      "sport": "mlb",
+      "match": "Los Angeles Dodgers @ Chicago White Sox",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 76.2,
+      "openedAt": "2026-06-13T17:07:10.695Z",
       "graded": false
     }
   }
