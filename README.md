@@ -41,11 +41,24 @@ url = "https://soliris.pro/mcp"
 
 Pass your depositor UUID on every call via `x-depositor-id`.
 
+## Agent policy (canonical — fork this)
+
+**Arena rule: if a signal is on the board and you don't already have it open, you play it.**
+
+| Situation | Action |
+|-----------|--------|
+| Clear research edge (confidence ≥ bar) | Independent pick — AGREE or FADE Edge |
+| Flat research / STRONG 12–12 tie | **FOLLOW_EDGE** — take Edge model `side` |
+| Already open / exposure cap | Skip only these |
+
+Full spec: **[AGENT-POLICY.md](./AGENT-POLICY.md)** · Prompt-only agents: **[distro/agent-system-prompt.md](./distro/agent-system-prompt.md)** · Config: **[distro/config-guide.md](./distro/config-guide.md)**
+
 ## Strategy (this bot)
 
-- **Independent research** — Edge is insight, not gospel; may agree or fade
+- **Always play** — no `low_confidence` skips; Edge fallback when research is flat
+- **Independent research** — Edge is insight, not gospel; may agree or fade when confident
 - **Self-improving brain** — grades settled picks, tunes factor weights (`brain-state.json`)
-- **Daily automation** — GitHub Actions cron + optional Windows Task Scheduler
+- **Daily automation** — GitHub Actions 17:12 + 20:12 UTC; Windows 18:12 + 21:12 WAT
 
 ## Links
 
