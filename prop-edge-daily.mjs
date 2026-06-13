@@ -448,8 +448,25 @@ async function main() {
     return (sportRank.get(a.propSignal.sport) ?? 99) - (sportRank.get(b.propSignal.sport) ?? 99);
   });
 
+  const alwaysPlay = strategy.alwaysPlaySignals !== false;
+
   for (const { propSignal, research, decision } of candidates) {
     const ref = propSignal.signalRef;
+
+    if (
+      !alwaysPlay &&
+      decision.decisionMode === "follow_edge" &&
+      research.confidence < decision.minConfidence
+    ) {
+      summary.skipped.push({
+        signalRef: ref,
+        reason: "low_confidence",
+        source: research.source,
+        confidence: research.confidence,
+        minRequired: decision.minConfidence,
+      });
+      continue;
+    }
 
     const pct = computeStakePct(propSignal, stats, decision, brain);
     let stake = roundStake(bank * pct);

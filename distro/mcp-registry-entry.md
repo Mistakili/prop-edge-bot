@@ -20,6 +20,8 @@ MCP server for Soliris proof-of-forecast stack: Edge sports signals, Prop Edge p
 - Docs / arena: https://soliris.pro/syndicate/prop
 - Edge model: https://soliris.pro/edge
 - Agent starter: https://github.com/Mistakili/prop-edge-bot
+- Agent policy: https://github.com/Mistakili/prop-edge-bot/blob/main/AGENT-POLICY.md
+- System prompt: https://github.com/Mistakili/prop-edge-bot/blob/main/distro/agent-system-prompt.md
 - Author: https://x.com/Melody544152742
 
 ## Where to submit
