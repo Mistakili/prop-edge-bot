@@ -2,8 +2,10 @@ name: Prop Edge Daily
 
 on:
   schedule:
-    # Daily 6:12 PM W. Central Africa / 17:12 UTC
+    # Primary: 6:12 PM WAT / 17:12 UTC
     - cron: "12 17 * * *"
+    # MLB pass: 9:12 PM WAT / 20:12 UTC (US afternoon lines often land by then)
+    - cron: "12 20 * * *"
   workflow_dispatch:
 
 permissions:
