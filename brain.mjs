@@ -153,7 +153,7 @@ export function tuneMeta(brain, configDefaults) {
     meta.fadeStakeMultiplier = clamp(0.45 + fadeWr * 0.55, 0.45, 1.0);
   }
 
-  if (agreeN >= 5) {
+  if (agreeN >= 8) {
     const agreeWr = agree.wins / agreeN;
     if (agreeWr < 0.42) minConf += 1;
     if (agreeWr > 0.58) minConf -= 0.5;

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-12T19:21:23.224Z",
-  "runs": 5,
+  "updatedAt": "2026-06-13T09:42:11.304Z",
+  "runs": 6,
   "meta": {
     "minConfidenceToBet": 14,
     "fadeStakeMultiplier": 0.7,
@@ -167,6 +167,40 @@
       "outcome": "win",
       "pnlUsdc": 86.355,
       "settledAt": "2026-06-11T04:14:37.203Z"
+    },
+    "1008": {
+      "positionId": "1008",
+      "signalRef": "nba:227",
+      "sport": "nba",
+      "match": "New York Knicks @ San Antonio Spurs",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 356.51,
+      "openedAt": "2026-06-13T09:42:10.088Z",
+      "graded": false
+    },
+    "1009": {
+      "positionId": "1009",
+      "signalRef": "nhl:401874176",
+      "sport": "nhl",
+      "match": "Carolina Hurricanes @ Vegas Golden Knights",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 89.13,
+      "openedAt": "2026-06-13T09:42:10.495Z",
+      "graded": false
     }
   }
 }

@@ -261,7 +261,7 @@ function factorWeightInline(key, brain) {
   return clamp(0.5 + (wr - 0.5) * 1.5, 0.35, 1.65);
 }
 
-function computeStakePct(propSignal, stats, research, brain) {
+function computeStakePct(propSignal, stats, decision, brain) {
   const isStrong = propSignal.edgeStrength === "STRONG";
   const tier = isStrong ? strategy.strongStakePct : strategy.moderateStakePct;
   let pct = tier.default;
@@ -270,10 +270,11 @@ function computeStakePct(propSignal, stats, research, brain) {
   const roi = (stats.roiPct ?? 0) / 100;
   const meta = brain.meta;
 
-  if (research.confidence >= 20) pct += 0.01;
-  if (research.confidence < 15) pct -= 0.01;
+  if (decision.effectiveConfidence >= 20) pct += 0.01;
+  if (decision.effectiveConfidence < 15) pct -= 0.01;
+  if (decision.decisionMode === "follow_edge") pct -= 0.005;
 
-  if (research.fadedEdge) pct *= meta.fadeStakeMultiplier ?? strategy.fadeStakeMultiplier;
+  if (decision.fadedEdge) pct *= meta.fadeStakeMultiplier ?? strategy.fadeStakeMultiplier;
   else pct *= meta.agreeStakeMultiplier ?? strategy.agreeStakeMultiplier;
 
   if (roi < -0.05) pct -= 0.015;
@@ -290,6 +291,59 @@ function computeMaxExposurePct(stats) {
   if ((stats.settledCount ?? 0) >= strategy.minSettledForAggression && roi > 0.05) pct = tier.max;
   if (roi < -0.1 || (stats.bankUsdc ?? 10000) < strategy.bankFloorUsdc) pct = tier.min;
   return clamp(pct, tier.min, tier.max);
+}
+
+/** Minimum confidence to use independent research instead of Edge fallback. */
+function minConfidenceFor(research, signalCount, brain) {
+  const base =
+    research.source === "prop_only"
+      ? (strategy.propOnlyMinConfidence ?? strategy.minConfidenceToBet)
+      : (brain.meta.minConfidenceToBet ?? strategy.minConfidenceToBet);
+
+  if (signalCount <= (strategy.lightSlateMaxSignals ?? 2)) {
+    return Math.min(base, strategy.lightSlateMinConfidence ?? 4);
+  }
+  return base;
+}
+
+/**
+ * Independent pick when research clears the bar; otherwise follow Edge model side.
+ * STRONG ties (confidence 0) always follow Edge.
+ */
+function resolveBetDecision(research, propSignal, signalCount, brain) {
+  const edgeSide = propSignal.side;
+  const minConfidence = minConfidenceFor(research, signalCount, brain);
+  const strongTie =
+    propSignal.edgeStrength === "STRONG" && research.confidence === 0 && research.homeScore === research.awayScore;
+
+  if (!strongTie && research.confidence >= minConfidence) {
+    return {
+      pickSide: research.researchPick,
+      action: research.fadedEdge ? "FADE" : "AGREE",
+      fadedEdge: research.fadedEdge,
+      decisionMode: "independent",
+      effectiveConfidence: research.confidence,
+      minConfidence,
+      reasons: research.reasons,
+    };
+  }
+
+  const followConf =
+    strongTie
+      ? (strategy.strongMinConfidence ?? 4)
+      : Math.max(research.confidence, strategy.followEdgeMinConfidence ?? 4);
+
+  return {
+    pickSide: edgeSide,
+    action: "FOLLOW_EDGE",
+    fadedEdge: false,
+    decisionMode: "follow_edge",
+    effectiveConfidence: followConf,
+    minConfidence,
+    reasons: strongTie
+      ? ["strong_tie_follow_edge", `edge_${propSignal.edgeStrength.toLowerCase()}_${edgeSide}`]
+      : ["follow_edge_no_clear_signal", `edge_${propSignal.edgeStrength.toLowerCase()}_${edgeSide}`],
+  };
 }
 
 // ─── Main ────────────────────────────────────────────────────────────────────
@@ -338,9 +392,6 @@ async function main() {
   summary.bankBefore = bank;
   summary.statsBefore = stats;
 
-  const minConfidenceEdge = brain.meta.minConfidenceToBet ?? strategy.minConfidenceToBet;
-  const minConfidencePropOnly = strategy.propOnlyMinConfidence ?? minConfidenceEdge;
-
   const [edgeData, { signals = [] }, { positions: openPositions = [] }] = await Promise.all([
     fetchEdgeResearch(),
     mcpCall("prop_signals"),
@@ -361,6 +412,10 @@ async function main() {
     const research = game
       ? researchGame(game, propSignal, brain)
       : researchFromPropOnly(propSignal, brain);
+    const decisionPreview = openRefs.has(ref)
+      ? null
+      : resolveBetDecision(research, propSignal, signals.length, brain);
+
     summary.research.push({
       signalRef: ref,
       source: research.source,
@@ -369,6 +424,8 @@ async function main() {
       researchPick: research.researchPick,
       fadedEdge: research.fadedEdge,
       confidence: research.confidence,
+      decisionMode: decisionPreview?.decisionMode ?? null,
+      finalPick: decisionPreview?.pickSide ?? null,
       reasons: research.reasons,
       factorWeights: research.factorWeights,
       edgeInsight: research.edgeInsight,
@@ -380,35 +437,21 @@ async function main() {
       continue;
     }
 
-    candidates.push({ propSignal, research });
+    const decision = resolveBetDecision(research, propSignal, signals.length, brain);
+    candidates.push({ propSignal, research, decision });
   }
 
   const sportRank = new Map(strategy.sportPriority.map((s, i) => [s, i]));
   candidates.sort((a, b) => {
-    const confDiff = b.research.confidence - a.research.confidence;
+    const confDiff = b.decision.effectiveConfidence - a.decision.effectiveConfidence;
     if (confDiff !== 0) return confDiff;
     return (sportRank.get(a.propSignal.sport) ?? 99) - (sportRank.get(b.propSignal.sport) ?? 99);
   });
 
-  for (const { propSignal, research } of candidates) {
+  for (const { propSignal, research, decision } of candidates) {
     const ref = propSignal.signalRef;
-    const minConfidence =
-      research.source === "prop_only" ? minConfidencePropOnly : minConfidenceEdge;
 
-    if (research.confidence < minConfidence) {
-      summary.skipped.push({
-        signalRef: ref,
-        reason: "low_confidence",
-        source: research.source,
-        confidence: research.confidence,
-        minRequired: minConfidence,
-        researchPick: research.researchPick,
-        edgePick: research.edgePick,
-      });
-      continue;
-    }
-
-    const pct = computeStakePct(propSignal, stats, research, brain);
+    const pct = computeStakePct(propSignal, stats, decision, brain);
     let stake = roundStake(bank * pct);
     if (stake < strategy.minStakeUsdc) stake = strategy.minStakeUsdc;
 
@@ -423,21 +466,23 @@ async function main() {
       const result = await mcpCall("prop_open_position", {
         signalRef: ref,
         stakeUsdc: stake,
-        side: research.researchPick,
+        side: decision.pickSide,
       });
 
       exposureUsed += result.stakeUsdc ?? stake;
-      const action = research.fadedEdge ? "FADE" : "AGREE";
       const pick = {
         signalRef: ref,
         sport: propSignal.sport,
-        action,
+        action: decision.action,
+        decisionMode: decision.decisionMode,
         match: `${propSignal.awayTeam} @ ${propSignal.homeTeam}`,
         edgePick: research.edgePick,
-        ourPick: research.researchPick,
-        fadedEdge: result.fadedEdge ?? research.fadedEdge,
-        confidence: research.confidence,
-        reasons: research.reasons,
+        ourPick: decision.pickSide,
+        researchPick: research.researchPick,
+        fadedEdge: result.fadedEdge ?? decision.fadedEdge,
+        confidence: decision.effectiveConfidence,
+        researchConfidence: research.confidence,
+        reasons: decision.reasons,
         stakePct: pct,
         stakeUsdc: result.stakeUsdc ?? stake,
         positionId: result.positionId,
@@ -447,7 +492,7 @@ async function main() {
       registerPosition(brain, pick);
 
       console.log(
-        `[prop-edge] ${action} ${ref} → ${research.researchPick} ${(pct * 100).toFixed(1)}% $${pick.stakeUsdc} (conf ${research.confidence})`,
+        `[prop-edge] ${decision.action} ${ref} → ${decision.pickSide} ${(pct * 100).toFixed(1)}% $${pick.stakeUsdc} (research ${research.confidence}, mode ${decision.decisionMode})`,
       );
     } catch (err) {
       summary.errors.push({ signalRef: ref, error: err.message });
