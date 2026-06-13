@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-13T18:43:13.439Z",
-  "runs": 10,
+  "updatedAt": "2026-06-13T21:37:34.558Z",
+  "runs": 11,
   "meta": {
-    "minConfidenceToBet": 14,
+    "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.8666666666666666
+    "agreeStakeMultiplier": 0.8875
   },
   "factors": {
     "home_field_mlb": {
@@ -36,8 +36,8 @@
   },
   "decisions": {
     "agree": {
-      "wins": 2,
-      "losses": 4,
+      "wins": 3,
+      "losses": 5,
       "pushes": 0
     },
     "fade": {
@@ -387,7 +387,10 @@
       ],
       "stakeUsdc": 76.2,
       "openedAt": "2026-06-13T17:07:09.435Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 69.2658,
+      "settledAt": "2026-06-13T20:59:40.977Z"
     },
     "1074": {
       "positionId": "1074",
@@ -455,7 +458,10 @@
       ],
       "stakeUsdc": 68.58,
       "openedAt": "2026-06-13T17:12:45.532Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -68.58,
+      "settledAt": "2026-06-13T21:09:50.892Z"
     },
     "1078": {
       "positionId": "1078",
