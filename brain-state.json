@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-14T21:37:55.171Z",
-  "runs": 13,
+  "updatedAt": "2026-06-15T20:33:12.993Z",
+  "runs": 14,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9199999999999999
+    "agreeStakeMultiplier": 0.9166666666666666
   },
   "factors": {
     "home_field_mlb": {
@@ -19,25 +19,25 @@
       "pushes": 0
     },
     "prop_stake_conviction": {
-      "wins": 0,
+      "wins": 1,
       "losses": 1,
       "pushes": 0
     },
     "edge_label_skeptic_fade_away": {
-      "wins": 0,
+      "wins": 1,
       "losses": 1,
       "pushes": 0
     },
     "edge_strength_strong_away": {
-      "wins": 0,
+      "wins": 1,
       "losses": 1,
       "pushes": 0
     }
   },
   "decisions": {
     "agree": {
-      "wins": 11,
-      "losses": 14,
+      "wins": 13,
+      "losses": 17,
       "pushes": 0
     },
     "fade": {
@@ -203,7 +203,10 @@
       ],
       "stakeUsdc": 89.13,
       "openedAt": "2026-06-13T09:42:10.495Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 81.01917,
+      "settledAt": "2026-06-15T03:00:09.620Z"
     },
     "1040": {
       "positionId": "1040",
@@ -581,7 +584,10 @@
       ],
       "stakeUsdc": 338.75,
       "openedAt": "2026-06-14T18:43:30.898Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 307.92375,
+      "settledAt": "2026-06-14T23:01:26.722Z"
     },
     "1146": {
       "positionId": "1146",
@@ -598,7 +604,10 @@
       ],
       "stakeUsdc": 337.07,
       "openedAt": "2026-06-14T18:43:31.108Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -337.07,
+      "settledAt": "2026-06-14T22:35:55.422Z"
     },
     "1147": {
       "positionId": "1147",
@@ -615,7 +624,10 @@
       ],
       "stakeUsdc": 84.27,
       "openedAt": "2026-06-14T18:43:31.310Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -84.27,
+      "settledAt": "2026-06-14T21:52:56.820Z"
     },
     "1148": {
       "positionId": "1148",
@@ -632,6 +644,77 @@
       ],
       "stakeUsdc": 82.58,
       "openedAt": "2026-06-14T18:43:31.518Z",
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -82.58,
+      "settledAt": "2026-06-15T02:15:26.037Z"
+    },
+    "1179": {
+      "positionId": "1179",
+      "signalRef": "soccer:760429",
+      "sport": "soccer",
+      "match": "Uruguay @ Saudi Arabia",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 84.01,
+      "openedAt": "2026-06-15T20:33:11.899Z",
+      "graded": false
+    },
+    "1180": {
+      "positionId": "1180",
+      "signalRef": "soccer:760427",
+      "sport": "soccer",
+      "match": "New Zealand @ Iran",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 84.01,
+      "openedAt": "2026-06-15T20:33:12.136Z",
+      "graded": false
+    },
+    "1181": {
+      "positionId": "1181",
+      "signalRef": "mlb:401815764",
+      "sport": "mlb",
+      "match": "Kansas City Royals @ Washington Nationals",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 336.03,
+      "openedAt": "2026-06-15T20:33:12.374Z",
+      "graded": false
+    },
+    "1182": {
+      "positionId": "1182",
+      "signalRef": "mlb:401815767",
+      "sport": "mlb",
+      "match": "Colorado Rockies @ Chicago Cubs",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 336.03,
+      "openedAt": "2026-06-15T20:33:12.658Z",
       "graded": false
     }
   }
