@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-16T20:18:36.704Z",
-  "runs": 16,
+  "updatedAt": "2026-06-16T22:22:00.844Z",
+  "runs": 17,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -875,6 +875,57 @@
       ],
       "stakeUsdc": 281.61,
       "openedAt": "2026-06-16T20:18:36.384Z",
+      "graded": false
+    },
+    "1229": {
+      "positionId": "1229",
+      "signalRef": "mlb:401815785",
+      "sport": "mlb",
+      "match": "Los Angeles Angels @ Arizona Diamondbacks",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 319.15,
+      "openedAt": "2026-06-16T22:22:00.090Z",
+      "graded": false
+    },
+    "1230": {
+      "positionId": "1230",
+      "signalRef": "mlb:401815783",
+      "sport": "mlb",
+      "match": "Minnesota Twins @ Texas Rangers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 319.15,
+      "openedAt": "2026-06-16T22:22:00.303Z",
+      "graded": false
+    },
+    "1231": {
+      "positionId": "1231",
+      "signalRef": "mlb:401815774",
+      "sport": "mlb",
+      "match": "Chicago White Sox @ New York Yankees",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 159.56,
+      "openedAt": "2026-06-16T22:22:00.518Z",
       "graded": false
     }
   }
