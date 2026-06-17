@@ -28,6 +28,11 @@ export const FACTOR_BASE = {
   home_field_nhl: 5,
   home_field_fifa: 3,
   prop_stake_conviction: 3,
+  espn_predictor_home: 5,
+  espn_predictor_away: 5,
+  espn_injury_edge_home: 4,
+  espn_injury_edge_away: 4,
+  soccer_home_dog_skeptic: 6,
 };
 
 export function normalizeFactor(reason) {
@@ -48,7 +53,13 @@ export function loadBrain(path) {
       version: 1,
       updatedAt: null,
       runs: 0,
-      meta: { minConfidenceToBet: 12, fadeStakeMultiplier: 0.7, agreeStakeMultiplier: 1.0 },
+      meta: {
+        minConfidenceToBet: 12,
+        minConfidenceAgree: 12,
+        minConfidenceFade: 10,
+        fadeStakeMultiplier: 0.7,
+        agreeStakeMultiplier: 1.0,
+      },
       factors: {},
       decisions: {
         agree: { wins: 0, losses: 0, pushes: 0 },
@@ -161,7 +172,17 @@ export function tuneMeta(brain, configDefaults) {
     meta.agreeStakeMultiplier = clamp(0.7 + agreeWr * 0.5, 0.7, 1.15);
   }
 
-  meta.minConfidenceToBet = clamp(Math.round(minConf * 2) / 2, 8, 18);
+  meta.minConfidenceToBet = clamp(Math.round(minConf * 2) / 2, 8, 16);
+  meta.minConfidenceAgree = meta.minConfidenceToBet;
+  const fadeBase = configDefaults.minConfidenceFade ?? 10;
+  if (fadeN >= 5) {
+    const fadeWr = fade.wins / fadeN;
+    if (fadeWr > 0.55) meta.minConfidenceFade = clamp(fadeBase - 1, 7, 12);
+    else if (fadeWr < 0.4) meta.minConfidenceFade = clamp(fadeBase + 1, 9, 14);
+    else meta.minConfidenceFade = fadeBase;
+  } else {
+    meta.minConfidenceFade = fadeBase;
+  }
   brain.meta = meta;
   return meta;
 }

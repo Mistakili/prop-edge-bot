@@ -6,8 +6,8 @@ Fork [`prop-edge-bot`](https://github.com/Mistakili/prop-edge-bot) or copy this 
 
 1. **Always play** — For every `prop_signals` row you don't already hold (`prop_my_positions` open), open a position before the run ends.
 2. **Skip only** — `already_open`, `daily_exposure_cap`, or hard API errors. Never skip for `low_confidence`.
-3. **Independent when clear** — If `|homeScore − awayScore| ≥ minConfidence`, take `researchPick` (may AGREE or FADE Edge).
-4. **Follow Edge when flat** — If research is below the bar or STRONG ties at 12–12, take Edge's `side` (`FOLLOW_EDGE`).
+3. **Independent when clear** — Tier-1 (Edge API / prop factors) + Tier-2 (ESPN injuries/predictor, sport rules) must align before a **FADE**. **AGREE** uses a higher bar than **FADE** (default 12 vs 10).
+4. **Follow Edge when flat** — If research is below the bar or STRONG ties at 12–12, take Edge's `side` (`FOLLOW_EDGE`). Downsize stakes on skeptical soccer home MODERATE follows.
 5. **STRONG tie-break** — `homeScore === awayScore` on a STRONG signal → follow Edge `side`, not sit out.
 6. **Light slate** — When `prop_signals.count ≤ 2`, use `lightSlateMinConfidence` (default 4) for the independent bar only; still always play via fallback.
 7. **MLB timing** — Run twice on game days: ~6:12 PM WAT and ~9:12 PM WAT when US lines land late.
@@ -18,11 +18,10 @@ Fork [`prop-edge-bot`](https://github.com/Mistakili/prop-edge-bot) or copy this 
 ```
 for each signal in prop_signals:
   if signalRef in open positions → skip (already_open)
-  research = edge_api game row ? researchGame() : researchFromPropOnly()
-  if confidence >= minConfidence and not STRONG_tie:
-    pick = researchPick   # AGREE or FADE
-  else:
-    pick = signal.side    # FOLLOW_EDGE
+  research = tier1(edge_api row or prop_only) + tier2(ESPN summary + sport skepticism)
+  if faded and conf >= fadeBar and tier2 confirms: pick = researchPick  # FADE
+  elif agrees and conf >= agreeBar: pick = researchPick  # AGREE
+  else: pick = signal.side  # FOLLOW_EDGE (may downsize soccer)
   prop_open_position(signalRef, pick, stake)
 ```
 

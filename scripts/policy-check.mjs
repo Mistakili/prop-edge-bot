@@ -3,7 +3,8 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { loadBrain, applyFactor, FACTOR_BASE } from "../brain.mjs";
+import { loadBrain, FACTOR_BASE } from "../brain.mjs";
+import { resolveBetDecision } from "../decision.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const config = JSON.parse(readFileSync(join(__dirname, "..", "prop-edge-config.json"), "utf8"));
@@ -68,41 +69,6 @@ function researchFromPropOnly(propSignal, brain) {
   };
 }
 
-function minConfidenceFor(research, signalCount, brain) {
-  const base =
-    research.source === "prop_only"
-      ? (strategy.propOnlyMinConfidence ?? strategy.minConfidenceToBet)
-      : (brain.meta.minConfidenceToBet ?? strategy.minConfidenceToBet);
-  if (signalCount <= (strategy.lightSlateMaxSignals ?? 2)) {
-    return Math.min(base, strategy.lightSlateMinConfidence ?? 4);
-  }
-  return base;
-}
-
-function resolveBetDecision(research, propSignal, signalCount, brain) {
-  const edgeSide = propSignal.side;
-  const minConfidence = minConfidenceFor(research, signalCount, brain);
-  const strongTie =
-    propSignal.edgeStrength === "STRONG" &&
-    research.confidence === 0 &&
-    research.homeScore === research.awayScore;
-
-  if (!strongTie && research.confidence >= minConfidence) {
-    return {
-      pickSide: research.researchPick,
-      action: research.fadedEdge ? "FADE" : "AGREE",
-      decisionMode: "independent",
-      minConfidence,
-    };
-  }
-  return {
-    pickSide: edgeSide,
-    action: "FOLLOW_EDGE",
-    decisionMode: "follow_edge",
-    minConfidence,
-  };
-}
-
 async function mcpCall(toolName, args = {}) {
   const res = await fetch(mcpUrl, {
     method: "POST",
@@ -126,6 +92,8 @@ const headers = { "x-depositor-id": userId };
 const edge = await fetch(edgeApi, { headers }).then((r) => r.json());
 const { signals = [] } = await mcpCall("prop_signals");
 const { positions: open = [] } = await mcpCall("prop_my_positions", { status: "open" });
+const me = await mcpCall("prop_me");
+const stats = me.stats ?? {};
 const openRefs = new Set(open.map((p) => p.signalRef));
 const gamesById = new Map((edge.signals ?? []).map((g) => [g.gameId, g]));
 
@@ -153,7 +121,7 @@ for (const s of signals) {
     continue;
   }
 
-  const decision = resolveBetDecision(research, s, signals.length, brain);
+  const decision = resolveBetDecision(research, s, signals.length, brain, stats, strategy);
   const plays = strategy.alwaysPlaySignals !== false;
   console.log(`\n${s.signalRef} ${s.sport} ${s.edgeStrength} edge=${s.side}`);
   console.log(`  research: home ${research.homeScore} away ${research.awayScore} conf ${research.confidence}`);
@@ -168,6 +136,6 @@ console.log(`Policy OK: ${wouldPlay === signals.length - wouldSkip ? "YES — ev
 // Static scenario checks
 const nhlStrong = { sport: "nhl", side: "home", edgeStrength: "STRONG", recommendedStakePct: 0.05 };
 const r = researchFromPropOnly(nhlStrong, brain);
-const d = resolveBetDecision(r, nhlStrong, 1, brain);
+const d = resolveBetDecision(r, nhlStrong, 1, brain, stats, strategy);
 console.log(`\nSTRONG NHL tie scenario: conf ${r.confidence} → ${d.action} ${d.pickSide} (expect FOLLOW_EDGE home)`);
 console.log(`Static tie OK: ${d.action === "FOLLOW_EDGE" && d.pickSide === "home" ? "YES" : "NO"}`);
