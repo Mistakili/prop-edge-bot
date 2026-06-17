@@ -1,11 +1,13 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-17T19:29:46.983Z",
-  "runs": 18,
+  "updatedAt": "2026-06-17T22:14:09.082Z",
+  "runs": 19,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9386363636363636
+    "agreeStakeMultiplier": 0.9391304347826086,
+    "minConfidenceAgree": 15,
+    "minConfidenceFade": 10
   },
   "factors": {
     "home_field_mlb": {
@@ -36,8 +38,8 @@
   },
   "decisions": {
     "agree": {
-      "wins": 21,
-      "losses": 23,
+      "wins": 22,
+      "losses": 24,
       "pushes": 0
     },
     "fade": {
@@ -824,7 +826,10 @@
       ],
       "stakeUsdc": 375.46,
       "openedAt": "2026-06-16T20:18:35.751Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -375.46,
+      "settledAt": "2026-06-17T20:05:59.196Z"
     },
     "1224": {
       "positionId": "1224",
@@ -995,6 +1000,80 @@
       ],
       "stakeUsdc": 174.79,
       "openedAt": "2026-06-17T19:29:46.602Z",
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 158.88411,
+      "settledAt": "2026-06-17T22:11:22.595Z"
+    },
+    "1295": {
+      "positionId": "1295",
+      "signalRef": "mlb:401815796",
+      "sport": "mlb",
+      "match": "Colorado Rockies @ Chicago Cubs",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 7.800000000000001,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home",
+        "espn_predictor_home"
+      ],
+      "stakeUsdc": 81.99,
+      "openedAt": "2026-06-17T22:14:07.856Z",
+      "graded": false
+    },
+    "1296": {
+      "positionId": "1296",
+      "signalRef": "mlb:401815795",
+      "sport": "mlb",
+      "match": "Cleveland Guardians @ Milwaukee Brewers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 7.800000000000001,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home",
+        "espn_predictor_home"
+      ],
+      "stakeUsdc": 81.99,
+      "openedAt": "2026-06-17T22:14:08.152Z",
+      "graded": false
+    },
+    "1297": {
+      "positionId": "1297",
+      "signalRef": "mlb:401815800",
+      "sport": "mlb",
+      "match": "Baltimore Orioles @ Seattle Mariners",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 327.98,
+      "openedAt": "2026-06-17T22:14:08.402Z",
+      "graded": false
+    },
+    "1298": {
+      "positionId": "1298",
+      "signalRef": "mlb:401815794",
+      "sport": "mlb",
+      "match": "Toronto Blue Jays @ Boston Red Sox",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 327.98,
+      "openedAt": "2026-06-17T22:14:08.652Z",
       "graded": false
     }
   }
