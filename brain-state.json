@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-16T22:22:00.844Z",
-  "runs": 17,
+  "updatedAt": "2026-06-17T19:29:46.983Z",
+  "runs": 18,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9368421052631578
+    "agreeStakeMultiplier": 0.9386363636363636
   },
   "factors": {
     "home_field_mlb": {
@@ -36,8 +36,8 @@
   },
   "decisions": {
     "agree": {
-      "wins": 18,
-      "losses": 20,
+      "wins": 21,
+      "losses": 23,
       "pushes": 0
     },
     "fade": {
@@ -841,7 +841,10 @@
       ],
       "stakeUsdc": 375.46,
       "openedAt": "2026-06-16T20:18:35.950Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -375.46,
+      "settledAt": "2026-06-17T03:02:20.367Z"
     },
     "1225": {
       "positionId": "1225",
@@ -858,7 +861,10 @@
       ],
       "stakeUsdc": 375.46,
       "openedAt": "2026-06-16T20:18:36.187Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 341.29314,
+      "settledAt": "2026-06-17T02:55:35.249Z"
     },
     "1226": {
       "positionId": "1226",
@@ -875,7 +881,10 @@
       ],
       "stakeUsdc": 281.61,
       "openedAt": "2026-06-16T20:18:36.384Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 255.98349,
+      "settledAt": "2026-06-17T02:06:24.034Z"
     },
     "1229": {
       "positionId": "1229",
@@ -892,7 +901,10 @@
       ],
       "stakeUsdc": 319.15,
       "openedAt": "2026-06-16T22:22:00.090Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -319.15,
+      "settledAt": "2026-06-17T04:12:30.965Z"
     },
     "1230": {
       "positionId": "1230",
@@ -909,7 +921,10 @@
       ],
       "stakeUsdc": 319.15,
       "openedAt": "2026-06-16T22:22:00.303Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -319.15,
+      "settledAt": "2026-06-17T02:50:07.549Z"
     },
     "1231": {
       "positionId": "1231",
@@ -926,6 +941,60 @@
       ],
       "stakeUsdc": 159.56,
       "openedAt": "2026-06-16T22:22:00.518Z",
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 145.04004,
+      "settledAt": "2026-06-17T01:59:45.435Z"
+    },
+    "1292": {
+      "positionId": "1292",
+      "signalRef": "mlb:401815793",
+      "sport": "mlb",
+      "match": "San Francisco Giants @ Atlanta Braves",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 349.59,
+      "openedAt": "2026-06-17T19:29:45.973Z",
+      "graded": false
+    },
+    "1293": {
+      "positionId": "1293",
+      "signalRef": "mlb:401815789",
+      "sport": "mlb",
+      "match": "Chicago White Sox @ New York Yankees",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 349.59,
+      "openedAt": "2026-06-17T19:29:46.348Z",
+      "graded": false
+    },
+    "1294": {
+      "positionId": "1294",
+      "signalRef": "mlb:401815799",
+      "sport": "mlb",
+      "match": "Los Angeles Angels @ Arizona Diamondbacks",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 174.79,
+      "openedAt": "2026-06-17T19:29:46.602Z",
       "graded": false
     }
   }
