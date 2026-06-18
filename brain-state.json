@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-18T19:35:27.388Z",
-  "runs": 20,
+  "updatedAt": "2026-06-18T22:24:56.098Z",
+  "runs": 21,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -1183,6 +1183,42 @@
       ],
       "stakeUsdc": 250.79,
       "openedAt": "2026-06-18T19:35:27.060Z",
+      "graded": false
+    },
+    "1332": {
+      "positionId": "1332",
+      "signalRef": "soccer:760441",
+      "sport": "soccer",
+      "match": "South Korea @ Mexico",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 75.24,
+      "openedAt": "2026-06-18T22:24:55.489Z",
+      "graded": false
+    },
+    "1333": {
+      "positionId": "1333",
+      "signalRef": "mlb:401815809",
+      "sport": "mlb",
+      "match": "St. Louis Cardinals @ Kansas City Royals",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 75.24,
+      "openedAt": "2026-06-18T22:24:55.748Z",
       "graded": false
     }
   }
