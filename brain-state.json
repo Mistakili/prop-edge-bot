@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-19T19:08:54.113Z",
-  "runs": 22,
+  "updatedAt": "2026-06-19T21:21:03.620Z",
+  "runs": 23,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -1360,6 +1360,75 @@
       ],
       "stakeUsdc": 313.45,
       "openedAt": "2026-06-19T19:08:53.801Z",
+      "graded": false
+    },
+    "1400": {
+      "positionId": "1400",
+      "signalRef": "nhl:401878099",
+      "sport": "nhl",
+      "match": "Winnipeg Jets @ Edmonton Oilers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 10.214285714285715,
+      "reasons": [
+        "home_field_nhl",
+        "edge_strength_moderate_home",
+        "espn_injury_edge_home"
+      ],
+      "stakeUsdc": 70.53,
+      "openedAt": "2026-06-19T21:21:02.560Z",
+      "graded": false
+    },
+    "1401": {
+      "positionId": "1401",
+      "signalRef": "mlb:401815823",
+      "sport": "mlb",
+      "match": "Baltimore Orioles @ Los Angeles Dodgers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 282.1,
+      "openedAt": "2026-06-19T21:21:02.819Z",
+      "graded": false
+    },
+    "1402": {
+      "positionId": "1402",
+      "signalRef": "mlb:401815813",
+      "sport": "mlb",
+      "match": "Cincinnati Reds @ New York Yankees",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 282.1,
+      "openedAt": "2026-06-19T21:21:03.103Z",
+      "graded": false
+    },
+    "1403": {
+      "positionId": "1403",
+      "signalRef": "mlb:401815824",
+      "sport": "mlb",
+      "match": "Minnesota Twins @ Arizona Diamondbacks",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 70.53,
+      "openedAt": "2026-06-19T21:21:03.307Z",
       "graded": false
     }
   }
