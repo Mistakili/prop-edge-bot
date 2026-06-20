@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-20T18:44:08.584Z",
-  "runs": 24,
+  "updatedAt": "2026-06-20T21:39:39.320Z",
+  "runs": 25,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -1577,6 +1577,58 @@
       ],
       "stakeUsdc": 332.28,
       "openedAt": "2026-06-20T18:44:08.342Z",
+      "graded": false
+    },
+    "1463": {
+      "positionId": "1463",
+      "signalRef": "mlb:401815828",
+      "sport": "mlb",
+      "match": "New York Mets @ Philadelphia Phillies",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.75,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 299.05,
+      "openedAt": "2026-06-20T21:39:38.753Z",
+      "graded": false
+    },
+    "1464": {
+      "positionId": "1464",
+      "signalRef": "mlb:401815835",
+      "sport": "mlb",
+      "match": "Los Angeles Angels @ Athletics",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 299.05,
+      "openedAt": "2026-06-20T21:39:38.918Z",
+      "graded": false
+    },
+    "1465": {
+      "positionId": "1465",
+      "signalRef": "mlb:401815834",
+      "sport": "mlb",
+      "match": "Pittsburgh Pirates @ Colorado Rockies",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 74.76,
+      "openedAt": "2026-06-20T21:39:39.083Z",
       "graded": false
     }
   }
