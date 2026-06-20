@@ -1,22 +1,22 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-19T21:21:03.620Z",
-  "runs": 23,
+  "updatedAt": "2026-06-20T18:44:08.584Z",
+  "runs": 24,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9413793103448276,
+    "agreeStakeMultiplier": 0.9686567164179104,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 10
   },
   "factors": {
     "home_field_mlb": {
-      "wins": 4,
+      "wins": 6,
       "losses": 3,
       "pushes": 0
     },
     "edge_strength_moderate_home": {
-      "wins": 4,
+      "wins": 6,
       "losses": 3,
       "pushes": 0
     },
@@ -36,15 +36,15 @@
       "pushes": 0
     },
     "espn_predictor_home": {
-      "wins": 2,
+      "wins": 4,
       "losses": 0,
       "pushes": 0
     }
   },
   "decisions": {
     "agree": {
-      "wins": 28,
-      "losses": 30,
+      "wins": 36,
+      "losses": 31,
       "pushes": 0
     },
     "fade": {
@@ -1273,7 +1273,10 @@
       ],
       "stakeUsdc": 78.36,
       "openedAt": "2026-06-19T19:08:52.570Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 71.22924,
+      "settledAt": "2026-06-20T01:11:30.400Z"
     },
     "1393": {
       "positionId": "1393",
@@ -1291,7 +1294,10 @@
       ],
       "stakeUsdc": 78.36,
       "openedAt": "2026-06-19T19:08:52.835Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 71.22924,
+      "settledAt": "2026-06-20T03:01:09.800Z"
     },
     "1394": {
       "positionId": "1394",
@@ -1308,7 +1314,10 @@
       ],
       "stakeUsdc": 78.36,
       "openedAt": "2026-06-19T19:08:53.099Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 71.22924,
+      "settledAt": "2026-06-20T01:29:30.099Z"
     },
     "1395": {
       "positionId": "1395",
@@ -1325,7 +1334,10 @@
       ],
       "stakeUsdc": 78.36,
       "openedAt": "2026-06-19T19:08:53.324Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 71.22924,
+      "settledAt": "2026-06-20T05:10:19.599Z"
     },
     "1396": {
       "positionId": "1396",
@@ -1342,7 +1354,10 @@
       ],
       "stakeUsdc": 78.36,
       "openedAt": "2026-06-19T19:08:53.582Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 71.22924,
+      "settledAt": "2026-06-20T01:47:58.001Z"
     },
     "1397": {
       "positionId": "1397",
@@ -1360,7 +1375,10 @@
       ],
       "stakeUsdc": 313.45,
       "openedAt": "2026-06-19T19:08:53.801Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -313.45,
+      "settledAt": "2026-06-19T22:52:15.997Z"
     },
     "1400": {
       "positionId": "1400",
@@ -1395,7 +1413,10 @@
       ],
       "stakeUsdc": 282.1,
       "openedAt": "2026-06-19T21:21:02.819Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 256.4289,
+      "settledAt": "2026-06-20T05:13:27.815Z"
     },
     "1402": {
       "positionId": "1402",
@@ -1412,7 +1433,10 @@
       ],
       "stakeUsdc": 282.1,
       "openedAt": "2026-06-19T21:21:03.103Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 256.4289,
+      "settledAt": "2026-06-20T01:47:59.998Z"
     },
     "1403": {
       "positionId": "1403",
@@ -1429,6 +1453,130 @@
       ],
       "stakeUsdc": 70.53,
       "openedAt": "2026-06-19T21:21:03.307Z",
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 64.11177,
+      "settledAt": "2026-06-20T04:45:10.599Z"
+    },
+    "1441": {
+      "positionId": "1441",
+      "signalRef": "mlb:401815827",
+      "sport": "mlb",
+      "match": "Milwaukee Brewers @ Atlanta Braves",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 12.25,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home",
+        "espn_predictor_home"
+      ],
+      "stakeUsdc": 83.07,
+      "openedAt": "2026-06-20T18:44:07.234Z",
+      "graded": false
+    },
+    "1442": {
+      "positionId": "1442",
+      "signalRef": "mlb:401815832",
+      "sport": "mlb",
+      "match": "San Diego Padres @ Texas Rangers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 12.25,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home",
+        "espn_predictor_home"
+      ],
+      "stakeUsdc": 83.07,
+      "openedAt": "2026-06-20T18:44:07.409Z",
+      "graded": false
+    },
+    "1443": {
+      "positionId": "1443",
+      "signalRef": "mlb:401814478",
+      "sport": "mlb",
+      "match": "Boston Red Sox @ Seattle Mariners",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 6,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home"
+      ],
+      "stakeUsdc": 83.07,
+      "openedAt": "2026-06-20T18:44:07.588Z",
+      "graded": false
+    },
+    "1444": {
+      "positionId": "1444",
+      "signalRef": "mlb:401815838",
+      "sport": "mlb",
+      "match": "Minnesota Twins @ Arizona Diamondbacks",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 6,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home"
+      ],
+      "stakeUsdc": 83.07,
+      "openedAt": "2026-06-20T18:44:07.803Z",
+      "graded": false
+    },
+    "1445": {
+      "positionId": "1445",
+      "signalRef": "mlb:401815830",
+      "sport": "mlb",
+      "match": "Washington Nationals @ Tampa Bay Rays",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 6,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home"
+      ],
+      "stakeUsdc": 83.07,
+      "openedAt": "2026-06-20T18:44:07.982Z",
+      "graded": false
+    },
+    "1446": {
+      "positionId": "1446",
+      "signalRef": "mlb:401815831",
+      "sport": "mlb",
+      "match": "Cleveland Guardians @ Houston Astros",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 6,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home"
+      ],
+      "stakeUsdc": 83.07,
+      "openedAt": "2026-06-20T18:44:08.163Z",
+      "graded": false
+    },
+    "1447": {
+      "positionId": "1447",
+      "signalRef": "mlb:401815836",
+      "sport": "mlb",
+      "match": "Baltimore Orioles @ Los Angeles Dodgers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.75,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 332.28,
+      "openedAt": "2026-06-20T18:44:08.342Z",
       "graded": false
     }
   }
