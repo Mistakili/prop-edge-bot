@@ -1,23 +1,23 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-20T21:39:39.320Z",
-  "runs": 25,
+  "updatedAt": "2026-06-21T18:48:26.213Z",
+  "runs": 26,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9686567164179104,
+    "agreeStakeMultiplier": 0.9467532467532467,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 10
   },
   "factors": {
     "home_field_mlb": {
-      "wins": 6,
-      "losses": 3,
+      "wins": 7,
+      "losses": 8,
       "pushes": 0
     },
     "edge_strength_moderate_home": {
-      "wins": 6,
-      "losses": 3,
+      "wins": 7,
+      "losses": 8,
       "pushes": 0
     },
     "prop_stake_conviction": {
@@ -36,15 +36,15 @@
       "pushes": 0
     },
     "espn_predictor_home": {
-      "wins": 4,
-      "losses": 0,
+      "wins": 5,
+      "losses": 1,
       "pushes": 0
     }
   },
   "decisions": {
     "agree": {
-      "wins": 36,
-      "losses": 31,
+      "wins": 38,
+      "losses": 39,
       "pushes": 0
     },
     "fade": {
@@ -1474,7 +1474,10 @@
       ],
       "stakeUsdc": 83.07,
       "openedAt": "2026-06-20T18:44:07.234Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 75.51063,
+      "settledAt": "2026-06-20T22:38:32.529Z"
     },
     "1442": {
       "positionId": "1442",
@@ -1492,7 +1495,10 @@
       ],
       "stakeUsdc": 83.07,
       "openedAt": "2026-06-20T18:44:07.409Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -83.07,
+      "settledAt": "2026-06-20T23:22:25.129Z"
     },
     "1443": {
       "positionId": "1443",
@@ -1509,7 +1515,10 @@
       ],
       "stakeUsdc": 83.07,
       "openedAt": "2026-06-20T18:44:07.588Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -83.07,
+      "settledAt": "2026-06-21T04:47:36.252Z"
     },
     "1444": {
       "positionId": "1444",
@@ -1526,7 +1535,10 @@
       ],
       "stakeUsdc": 83.07,
       "openedAt": "2026-06-20T18:44:07.803Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -83.07,
+      "settledAt": "2026-06-21T05:24:56.752Z"
     },
     "1445": {
       "positionId": "1445",
@@ -1543,7 +1555,10 @@
       ],
       "stakeUsdc": 83.07,
       "openedAt": "2026-06-20T18:44:07.982Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -83.07,
+      "settledAt": "2026-06-20T23:11:57.845Z"
     },
     "1446": {
       "positionId": "1446",
@@ -1560,7 +1575,10 @@
       ],
       "stakeUsdc": 83.07,
       "openedAt": "2026-06-20T18:44:08.163Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -83.07,
+      "settledAt": "2026-06-21T01:43:51.044Z"
     },
     "1447": {
       "positionId": "1447",
@@ -1577,7 +1595,10 @@
       ],
       "stakeUsdc": 332.28,
       "openedAt": "2026-06-20T18:44:08.342Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -332.28,
+      "settledAt": "2026-06-21T04:50:40.851Z"
     },
     "1463": {
       "positionId": "1463",
@@ -1594,7 +1615,10 @@
       ],
       "stakeUsdc": 299.05,
       "openedAt": "2026-06-20T21:39:38.753Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 271.83645,
+      "settledAt": "2026-06-21T02:06:00.644Z"
     },
     "1464": {
       "positionId": "1464",
@@ -1612,7 +1636,10 @@
       ],
       "stakeUsdc": 299.05,
       "openedAt": "2026-06-20T21:39:38.918Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -299.05,
+      "settledAt": "2026-06-21T05:06:51.550Z"
     },
     "1465": {
       "positionId": "1465",
@@ -1629,6 +1656,133 @@
       ],
       "stakeUsdc": 74.76,
       "openedAt": "2026-06-20T21:39:39.083Z",
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -74.76,
+      "settledAt": "2026-06-21T03:45:24.665Z"
+    },
+    "1511": {
+      "positionId": "1511",
+      "signalRef": "mlb:401815852",
+      "sport": "mlb",
+      "match": "Boston Red Sox @ Seattle Mariners",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 8.6,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home",
+        "espn_predictor_home"
+      ],
+      "stakeUsdc": 75.33,
+      "openedAt": "2026-06-21T18:48:24.509Z",
+      "graded": false
+    },
+    "1512": {
+      "positionId": "1512",
+      "signalRef": "soccer:761660",
+      "sport": "soccer",
+      "match": "Vancouver Whitecaps @ Chicago Fire FC",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 75.33,
+      "openedAt": "2026-06-21T18:48:24.760Z",
+      "graded": false
+    },
+    "1513": {
+      "positionId": "1513",
+      "signalRef": "soccer:760451",
+      "sport": "soccer",
+      "match": "Iran @ Belgium",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 75.33,
+      "openedAt": "2026-06-21T18:48:24.977Z",
+      "graded": false
+    },
+    "1514": {
+      "positionId": "1514",
+      "signalRef": "soccer:760450",
+      "sport": "soccer",
+      "match": "Cape Verde @ Uruguay",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 75.33,
+      "openedAt": "2026-06-21T18:48:25.238Z",
+      "graded": false
+    },
+    "1515": {
+      "positionId": "1515",
+      "signalRef": "soccer:760452",
+      "sport": "soccer",
+      "match": "Egypt @ New Zealand",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 75.33,
+      "openedAt": "2026-06-21T18:48:25.453Z",
+      "graded": false
+    },
+    "1516": {
+      "positionId": "1516",
+      "signalRef": "mlb:401815842",
+      "sport": "mlb",
+      "match": "New York Mets @ Philadelphia Phillies",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 301.32,
+      "openedAt": "2026-06-21T18:48:25.666Z",
+      "graded": false
+    },
+    "1517": {
+      "positionId": "1517",
+      "signalRef": "mlb:401815851",
+      "sport": "mlb",
+      "match": "Baltimore Orioles @ Los Angeles Dodgers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 75.32,
+      "openedAt": "2026-06-21T18:48:25.878Z",
       "graded": false
     }
   }
