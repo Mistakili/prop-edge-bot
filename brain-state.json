@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-21T18:48:26.213Z",
-  "runs": 26,
+  "updatedAt": "2026-06-21T21:41:09.340Z",
+  "runs": 27,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9467532467532467,
+    "agreeStakeMultiplier": 0.9435897435897436,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 10
   },
@@ -44,7 +44,7 @@
   "decisions": {
     "agree": {
       "wins": 38,
-      "losses": 39,
+      "losses": 40,
       "pushes": 0
     },
     "fade": {
@@ -1713,7 +1713,10 @@
       ],
       "stakeUsdc": 75.33,
       "openedAt": "2026-06-21T18:48:24.977Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -75.33,
+      "settledAt": "2026-06-21T21:27:38.592Z"
     },
     "1514": {
       "positionId": "1514",
