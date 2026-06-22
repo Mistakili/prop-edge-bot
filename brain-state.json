@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-22T20:14:47.612Z",
-  "runs": 28,
+  "updatedAt": "2026-06-22T22:15:47.703Z",
+  "runs": 29,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -1871,6 +1871,164 @@
       ],
       "stakeUsdc": 305.7,
       "openedAt": "2026-06-22T20:14:47.307Z",
+      "graded": false
+    },
+    "1564": {
+      "positionId": "1564",
+      "signalRef": "mlb:401815854",
+      "sport": "mlb",
+      "match": "Chicago Cubs @ New York Mets",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 68.78,
+      "openedAt": "2026-06-22T22:15:45.982Z",
+      "graded": false
+    },
+    "1565": {
+      "positionId": "1565",
+      "signalRef": "mlb:401815857",
+      "sport": "mlb",
+      "match": "Milwaukee Brewers @ Cincinnati Reds",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 68.78,
+      "openedAt": "2026-06-22T22:15:46.197Z",
+      "graded": false
+    },
+    "1566": {
+      "positionId": "1566",
+      "signalRef": "mlb:401815862",
+      "sport": "mlb",
+      "match": "Cleveland Guardians @ Chicago White Sox",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 68.78,
+      "openedAt": "2026-06-22T22:15:46.374Z",
+      "graded": false
+    },
+    "1567": {
+      "positionId": "1567",
+      "signalRef": "mlb:401815858",
+      "sport": "mlb",
+      "match": "New York Yankees @ Detroit Tigers",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 68.78,
+      "openedAt": "2026-06-22T22:15:46.583Z",
+      "graded": false
+    },
+    "1568": {
+      "positionId": "1568",
+      "signalRef": "mlb:401815855",
+      "sport": "mlb",
+      "match": "Houston Astros @ Toronto Blue Jays",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 68.78,
+      "openedAt": "2026-06-22T22:15:46.768Z",
+      "graded": false
+    },
+    "1569": {
+      "positionId": "1569",
+      "signalRef": "mlb:401815866",
+      "sport": "mlb",
+      "match": "Baltimore Orioles @ Los Angeles Angels",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 68.78,
+      "openedAt": "2026-06-22T22:15:46.945Z",
+      "graded": false
+    },
+    "1570": {
+      "positionId": "1570",
+      "signalRef": "mlb:401815863",
+      "sport": "mlb",
+      "match": "Los Angeles Dodgers @ Minnesota Twins",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 68.78,
+      "openedAt": "2026-06-22T22:15:47.124Z",
+      "graded": false
+    },
+    "1571": {
+      "positionId": "1571",
+      "signalRef": "mlb:401815865",
+      "sport": "mlb",
+      "match": "Atlanta Braves @ San Diego Padres",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 68.78,
+      "openedAt": "2026-06-22T22:15:47.302Z",
+      "graded": false
+    },
+    "1572": {
+      "positionId": "1572",
+      "signalRef": "mlb:401815864",
+      "sport": "mlb",
+      "match": "Boston Red Sox @ Colorado Rockies",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 68.78,
+      "openedAt": "2026-06-22T22:15:47.480Z",
       "graded": false
     }
   }
