@@ -1,22 +1,22 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-21T21:41:09.340Z",
-  "runs": 27,
+  "updatedAt": "2026-06-22T20:14:47.612Z",
+  "runs": 28,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9435897435897436,
+    "agreeStakeMultiplier": 0.9469879518072288,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 10
   },
   "factors": {
     "home_field_mlb": {
-      "wins": 7,
+      "wins": 8,
       "losses": 8,
       "pushes": 0
     },
     "edge_strength_moderate_home": {
-      "wins": 7,
+      "wins": 8,
       "losses": 8,
       "pushes": 0
     },
@@ -36,15 +36,15 @@
       "pushes": 0
     },
     "espn_predictor_home": {
-      "wins": 5,
+      "wins": 6,
       "losses": 1,
       "pushes": 0
     }
   },
   "decisions": {
     "agree": {
-      "wins": 38,
-      "losses": 40,
+      "wins": 41,
+      "losses": 42,
       "pushes": 0
     },
     "fade": {
@@ -1677,7 +1677,10 @@
       ],
       "stakeUsdc": 75.33,
       "openedAt": "2026-06-21T18:48:24.509Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 68.47497,
+      "settledAt": "2026-06-21T22:31:32.954Z"
     },
     "1512": {
       "positionId": "1512",
@@ -1734,7 +1737,10 @@
       ],
       "stakeUsdc": 75.33,
       "openedAt": "2026-06-21T18:48:25.238Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -75.33,
+      "settledAt": "2026-06-22T01:36:47.217Z"
     },
     "1515": {
       "positionId": "1515",
@@ -1752,7 +1758,10 @@
       ],
       "stakeUsdc": 75.33,
       "openedAt": "2026-06-21T18:48:25.453Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 68.47497,
+      "settledAt": "2026-06-22T02:02:43.054Z"
     },
     "1516": {
       "positionId": "1516",
@@ -1769,7 +1778,10 @@
       ],
       "stakeUsdc": 301.32,
       "openedAt": "2026-06-21T18:48:25.666Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 273.89988,
+      "settledAt": "2026-06-22T02:11:58.971Z"
     },
     "1517": {
       "positionId": "1517",
@@ -1786,6 +1798,79 @@
       ],
       "stakeUsdc": 75.32,
       "openedAt": "2026-06-21T18:48:25.878Z",
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -75.32,
+      "settledAt": "2026-06-21T23:05:31.270Z"
+    },
+    "1560": {
+      "positionId": "1560",
+      "signalRef": "mlb:401815860",
+      "sport": "mlb",
+      "match": "Texas Rangers @ Miami Marlins",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 9.178571428571427,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home",
+        "espn_predictor_home"
+      ],
+      "stakeUsdc": 76.42,
+      "openedAt": "2026-06-22T20:14:46.559Z",
+      "graded": false
+    },
+    "1561": {
+      "positionId": "1561",
+      "signalRef": "mlb:401815859",
+      "sport": "mlb",
+      "match": "Philadelphia Phillies @ Washington Nationals",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 6.178571428571427,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 76.42,
+      "openedAt": "2026-06-22T20:14:46.828Z",
+      "graded": false
+    },
+    "1562": {
+      "positionId": "1562",
+      "signalRef": "mlb:401815856",
+      "sport": "mlb",
+      "match": "Kansas City Royals @ Tampa Bay Rays",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 305.7,
+      "openedAt": "2026-06-22T20:14:47.047Z",
+      "graded": false
+    },
+    "1563": {
+      "positionId": "1563",
+      "signalRef": "mlb:401815861",
+      "sport": "mlb",
+      "match": "Arizona Diamondbacks @ St. Louis Cardinals",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 305.7,
+      "openedAt": "2026-06-22T20:14:47.307Z",
       "graded": false
     }
   }
