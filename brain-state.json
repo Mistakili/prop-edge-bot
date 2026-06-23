@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T19:17:52.482Z",
-  "runs": 30,
+  "updatedAt": "2026-06-23T21:50:13.964Z",
+  "runs": 31,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -2103,6 +2103,130 @@
       ],
       "stakeUsdc": 365.1,
       "openedAt": "2026-06-23T19:17:52.067Z",
+      "graded": false
+    },
+    "1623": {
+      "positionId": "1623",
+      "signalRef": "mlb:401815874",
+      "sport": "mlb",
+      "match": "Texas Rangers @ Miami Marlins",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 8.022058823529411,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home",
+        "espn_predictor_home"
+      ],
+      "stakeUsdc": 67.49,
+      "openedAt": "2026-06-23T21:50:12.501Z",
+      "graded": false
+    },
+    "1624": {
+      "positionId": "1624",
+      "signalRef": "nhl:401879412",
+      "sport": "nhl",
+      "match": "Vegas Golden Knights @ Los Angeles Kings",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.911764705882353,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 67.49,
+      "openedAt": "2026-06-23T21:50:12.739Z",
+      "graded": false
+    },
+    "1625": {
+      "positionId": "1625",
+      "signalRef": "mlb:401815879",
+      "sport": "mlb",
+      "match": "Athletics @ San Francisco Giants",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 5.110294117647059,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 67.49,
+      "openedAt": "2026-06-23T21:50:12.931Z",
+      "graded": false
+    },
+    "1626": {
+      "positionId": "1626",
+      "signalRef": "mlb:401815877",
+      "sport": "mlb",
+      "match": "Los Angeles Dodgers @ Minnesota Twins",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4.264705882352941,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 67.49,
+      "openedAt": "2026-06-23T21:50:13.125Z",
+      "graded": false
+    },
+    "1627": {
+      "positionId": "1627",
+      "signalRef": "soccer:760459",
+      "sport": "soccer",
+      "match": "Congo DR @ Colombia",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 269.97,
+      "openedAt": "2026-06-23T21:50:13.313Z",
+      "graded": false
+    },
+    "1628": {
+      "positionId": "1628",
+      "signalRef": "soccer:760460",
+      "sport": "soccer",
+      "match": "Croatia @ Panama",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 67.49,
+      "openedAt": "2026-06-23T21:50:13.545Z",
+      "graded": false
+    },
+    "1629": {
+      "positionId": "1629",
+      "signalRef": "mlb:401815869",
+      "sport": "mlb",
+      "match": "Kansas City Royals @ Tampa Bay Rays",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 67.52,
+      "openedAt": "2026-06-23T21:50:13.741Z",
       "graded": false
     }
   }
