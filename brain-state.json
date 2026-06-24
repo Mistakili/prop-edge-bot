@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-24T19:00:34.082Z",
-  "runs": 32,
+  "updatedAt": "2026-06-24T21:44:19.002Z",
+  "runs": 33,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -2326,6 +2326,60 @@
       ],
       "stakeUsdc": 281.16,
       "openedAt": "2026-06-24T19:00:33.873Z",
+      "graded": false
+    },
+    "1683": {
+      "positionId": "1683",
+      "signalRef": "soccer:760467",
+      "sport": "soccer",
+      "match": "Mexico @ Czechia",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 6.5,
+      "reasons": [
+        "prop_stake_conviction",
+        "edge_label_skeptic_fade_away",
+        "edge_strength_strong_away"
+      ],
+      "stakeUsdc": 253.05,
+      "openedAt": "2026-06-24T21:44:18.029Z",
+      "graded": false
+    },
+    "1684": {
+      "positionId": "1684",
+      "signalRef": "soccer:760466",
+      "sport": "soccer",
+      "match": "South Korea @ South Africa",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 6.5,
+      "reasons": [
+        "prop_stake_conviction",
+        "edge_label_skeptic_fade_away",
+        "edge_strength_strong_away"
+      ],
+      "stakeUsdc": 253.05,
+      "openedAt": "2026-06-24T21:44:18.318Z",
+      "graded": false
+    },
+    "1685": {
+      "positionId": "1685",
+      "signalRef": "soccer:760464",
+      "sport": "soccer",
+      "match": "Haiti @ Morocco",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 126.52,
+      "openedAt": "2026-06-24T21:44:18.618Z",
       "graded": false
     }
   }
