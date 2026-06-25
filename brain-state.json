@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T19:16:32.077Z",
-  "runs": 34,
+  "updatedAt": "2026-06-25T21:52:37.566Z",
+  "runs": 35,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -2507,6 +2507,76 @@
       ],
       "stakeUsdc": 134.81,
       "openedAt": "2026-06-25T19:16:31.855Z",
+      "graded": false
+    },
+    "1730": {
+      "positionId": "1730",
+      "signalRef": "soccer:760470",
+      "sport": "soccer",
+      "match": "United States @ Türkiye",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_away"
+      ],
+      "stakeUsdc": 242.65,
+      "openedAt": "2026-06-25T21:52:36.670Z",
+      "graded": false
+    },
+    "1731": {
+      "positionId": "1731",
+      "signalRef": "soccer:760472",
+      "sport": "soccer",
+      "match": "Netherlands @ Tunisia",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_away"
+      ],
+      "stakeUsdc": 242.65,
+      "openedAt": "2026-06-25T21:52:36.866Z",
+      "graded": false
+    },
+    "1732": {
+      "positionId": "1732",
+      "signalRef": "soccer:760471",
+      "sport": "soccer",
+      "match": "Sweden @ Japan",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 60.66,
+      "openedAt": "2026-06-25T21:52:37.093Z",
+      "graded": false
+    },
+    "1733": {
+      "positionId": "1733",
+      "signalRef": "soccer:760469",
+      "sport": "soccer",
+      "match": "Australia @ Paraguay",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 60.66,
+      "openedAt": "2026-06-25T21:52:37.331Z",
       "graded": false
     }
   }
