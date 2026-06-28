@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-28T18:16:57.214Z",
-  "runs": 40,
+  "updatedAt": "2026-06-28T21:18:46.839Z",
+  "runs": 41,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9340425531914893,
+    "agreeStakeMultiplier": 0.9342657342657342,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 10
   },
@@ -48,8 +48,8 @@
   },
   "decisions": {
     "agree": {
-      "wins": 66,
-      "losses": 75,
+      "wins": 67,
+      "losses": 76,
       "pushes": 0
     },
     "fade": {
@@ -3126,7 +3126,10 @@
       ],
       "stakeUsdc": 55.86,
       "openedAt": "2026-06-28T18:16:55.691Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -55.86,
+      "settledAt": "2026-06-28T19:51:05.880Z"
     },
     "1903": {
       "positionId": "1903",
@@ -3178,7 +3181,10 @@
       ],
       "stakeUsdc": 55.86,
       "openedAt": "2026-06-28T18:16:56.388Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 50.77674,
+      "settledAt": "2026-06-28T20:34:02.480Z"
     },
     "1906": {
       "positionId": "1906",
