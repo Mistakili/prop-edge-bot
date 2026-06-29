@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-29T19:14:58.484Z",
-  "runs": 42,
+  "updatedAt": "2026-06-29T21:43:17.847Z",
+  "runs": 43,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.927891156462585,
+    "agreeStakeMultiplier": 0.9263513513513513,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 10
   },
@@ -49,7 +49,7 @@
   "decisions": {
     "agree": {
       "wins": 67,
-      "losses": 80,
+      "losses": 81,
       "pushes": 0
     },
     "fade": {
@@ -3303,7 +3303,10 @@
       ],
       "stakeUsdc": 53.57,
       "openedAt": "2026-06-29T19:14:57.741Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -53.57,
+      "settledAt": "2026-06-29T21:23:17.681Z"
     },
     "1951": {
       "positionId": "1951",
@@ -3357,6 +3360,60 @@
       ],
       "stakeUsdc": 53.58,
       "openedAt": "2026-06-29T19:14:58.273Z",
+      "graded": false
+    },
+    "1954": {
+      "positionId": "1954",
+      "signalRef": "mlb:401815952",
+      "sport": "mlb",
+      "match": "Detroit Tigers @ New York Yankees",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 192.86,
+      "openedAt": "2026-06-29T21:43:17.281Z",
+      "graded": false
+    },
+    "1955": {
+      "positionId": "1955",
+      "signalRef": "mlb:401815957",
+      "sport": "mlb",
+      "match": "Cincinnati Reds @ Milwaukee Brewers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 192.86,
+      "openedAt": "2026-06-29T21:43:17.456Z",
+      "graded": false
+    },
+    "1956": {
+      "positionId": "1956",
+      "signalRef": "mlb:401815953",
+      "sport": "mlb",
+      "match": "New York Mets @ Toronto Blue Jays",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 96.42,
+      "openedAt": "2026-06-29T21:43:17.633Z",
       "graded": false
     }
   }
