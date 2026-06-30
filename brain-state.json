@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-30T19:04:58.667Z",
-  "runs": 44,
+  "updatedAt": "2026-06-30T21:46:04.490Z",
+  "runs": 45,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -3562,6 +3562,77 @@
       ],
       "stakeUsdc": 56.07,
       "openedAt": "2026-06-30T19:04:58.457Z",
+      "graded": false
+    },
+    "2008": {
+      "positionId": "2008",
+      "signalRef": "mlb:401815964",
+      "sport": "mlb",
+      "match": "Chicago White Sox @ Baltimore Orioles",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4.206896551724139,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 50.47,
+      "openedAt": "2026-06-30T21:46:03.275Z",
+      "graded": false
+    },
+    "2009": {
+      "positionId": "2009",
+      "signalRef": "mlb:401815965",
+      "sport": "mlb",
+      "match": "Detroit Tigers @ New York Yankees",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 201.87,
+      "openedAt": "2026-06-30T21:46:03.520Z",
+      "graded": false
+    },
+    "2010": {
+      "positionId": "2010",
+      "signalRef": "mlb:401815968",
+      "sport": "mlb",
+      "match": "St. Louis Cardinals @ Atlanta Braves",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 201.87,
+      "openedAt": "2026-06-30T21:46:03.775Z",
+      "graded": false
+    },
+    "2011": {
+      "positionId": "2011",
+      "signalRef": "mlb:401815967",
+      "sport": "mlb",
+      "match": "Pittsburgh Pirates @ Philadelphia Phillies",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 50.46,
+      "openedAt": "2026-06-30T21:46:04.058Z",
       "graded": false
     }
   }
