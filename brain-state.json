@@ -1,22 +1,22 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-30T21:46:04.490Z",
-  "runs": 45,
+  "updatedAt": "2026-07-01T19:09:35.511Z",
+  "runs": 46,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.932484076433121,
+    "agreeStakeMultiplier": 0.9351190476190476,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 10
   },
   "factors": {
     "home_field_mlb": {
-      "wins": 15,
+      "wins": 16,
       "losses": 14,
       "pushes": 0
     },
     "edge_strength_moderate_home": {
-      "wins": 15,
+      "wins": 16,
       "losses": 14,
       "pushes": 0
     },
@@ -36,7 +36,7 @@
       "pushes": 0
     },
     "espn_predictor_home": {
-      "wins": 13,
+      "wins": 14,
       "losses": 7,
       "pushes": 0
     },
@@ -48,8 +48,8 @@
   },
   "decisions": {
     "agree": {
-      "wins": 73,
-      "losses": 84,
+      "wins": 79,
+      "losses": 89,
       "pushes": 0
     },
     "fade": {
@@ -3459,7 +3459,10 @@
       ],
       "stakeUsdc": 56.07,
       "openedAt": "2026-06-30T19:04:57.357Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 50.96763,
+      "settledAt": "2026-07-01T03:30:07.450Z"
     },
     "2002": {
       "positionId": "2002",
@@ -3476,7 +3479,10 @@
       ],
       "stakeUsdc": 224.29,
       "openedAt": "2026-06-30T19:04:57.527Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 203.87961,
+      "settledAt": "2026-07-01T04:16:08.651Z"
     },
     "2003": {
       "positionId": "2003",
@@ -3494,7 +3500,10 @@
       ],
       "stakeUsdc": 56.07,
       "openedAt": "2026-06-30T19:04:57.735Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 50.96763,
+      "settledAt": "2026-07-01T02:12:39.139Z"
     },
     "2004": {
       "positionId": "2004",
@@ -3511,7 +3520,10 @@
       ],
       "stakeUsdc": 56.07,
       "openedAt": "2026-06-30T19:04:57.941Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 50.96763,
+      "settledAt": "2026-07-01T04:38:10.854Z"
     },
     "2005": {
       "positionId": "2005",
@@ -3528,7 +3540,10 @@
       ],
       "stakeUsdc": 56.07,
       "openedAt": "2026-06-30T19:04:58.114Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 50.96763,
+      "settledAt": "2026-07-01T04:12:14.750Z"
     },
     "2006": {
       "positionId": "2006",
@@ -3545,7 +3560,10 @@
       ],
       "stakeUsdc": 56.07,
       "openedAt": "2026-06-30T19:04:58.290Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -56.07,
+      "settledAt": "2026-07-01T01:49:28.053Z"
     },
     "2007": {
       "positionId": "2007",
@@ -3562,7 +3580,10 @@
       ],
       "stakeUsdc": 56.07,
       "openedAt": "2026-06-30T19:04:58.457Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -56.07,
+      "settledAt": "2026-07-01T00:56:17.250Z"
     },
     "2008": {
       "positionId": "2008",
@@ -3579,7 +3600,10 @@
       ],
       "stakeUsdc": 50.47,
       "openedAt": "2026-06-30T21:46:03.275Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -50.47,
+      "settledAt": "2026-07-01T01:32:23.953Z"
     },
     "2009": {
       "positionId": "2009",
@@ -3597,7 +3621,10 @@
       ],
       "stakeUsdc": 201.87,
       "openedAt": "2026-06-30T21:46:03.520Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -201.87,
+      "settledAt": "2026-07-01T01:53:31.053Z"
     },
     "2010": {
       "positionId": "2010",
@@ -3615,7 +3642,10 @@
       ],
       "stakeUsdc": 201.87,
       "openedAt": "2026-06-30T21:46:03.775Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -201.87,
+      "settledAt": "2026-07-01T02:12:39.333Z"
     },
     "2011": {
       "positionId": "2011",
@@ -3633,6 +3663,130 @@
       ],
       "stakeUsdc": 50.46,
       "openedAt": "2026-06-30T21:46:04.058Z",
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 45.86814,
+      "settledAt": "2026-07-01T01:19:14.151Z"
+    },
+    "2049": {
+      "positionId": "2049",
+      "signalRef": "mlb:401815990",
+      "sport": "mlb",
+      "match": "Miami Marlins @ Colorado Rockies",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 5.099999999999998,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_away"
+      ],
+      "stakeUsdc": 219.79,
+      "openedAt": "2026-07-01T19:09:34.118Z",
+      "graded": false
+    },
+    "2050": {
+      "positionId": "2050",
+      "signalRef": "mlb:401815981",
+      "sport": "mlb",
+      "match": "New York Mets @ Toronto Blue Jays",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4.4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 54.95,
+      "openedAt": "2026-07-01T19:09:34.334Z",
+      "graded": false
+    },
+    "2051": {
+      "positionId": "2051",
+      "signalRef": "mlb:401815982",
+      "sport": "mlb",
+      "match": "Pittsburgh Pirates @ Philadelphia Phillies",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4.4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 54.95,
+      "openedAt": "2026-07-01T19:09:34.514Z",
+      "graded": false
+    },
+    "2052": {
+      "positionId": "2052",
+      "signalRef": "mlb:401815983",
+      "sport": "mlb",
+      "match": "St. Louis Cardinals @ Atlanta Braves",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4.4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 54.95,
+      "openedAt": "2026-07-01T19:09:34.682Z",
+      "graded": false
+    },
+    "2053": {
+      "positionId": "2053",
+      "signalRef": "mlb:401815987",
+      "sport": "mlb",
+      "match": "Minnesota Twins @ Houston Astros",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4.4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home"
+      ],
+      "stakeUsdc": 54.95,
+      "openedAt": "2026-07-01T19:09:34.866Z",
+      "graded": false
+    },
+    "2054": {
+      "positionId": "2054",
+      "signalRef": "soccer:760493",
+      "sport": "soccer",
+      "match": "Senegal @ Belgium",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 54.95,
+      "openedAt": "2026-07-01T19:09:35.087Z",
+      "graded": false
+    },
+    "2055": {
+      "positionId": "2055",
+      "signalRef": "soccer:760494",
+      "sport": "soccer",
+      "match": "Bosnia-Herzegovina @ United States",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 54.92,
+      "openedAt": "2026-07-01T19:09:35.269Z",
       "graded": false
     }
   }
