@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-02T18:47:15.860Z",
-  "runs": 48,
+  "updatedAt": "2026-07-02T21:31:07.823Z",
+  "runs": 49,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -3996,6 +3996,58 @@
       ],
       "stakeUsdc": 108.95,
       "openedAt": "2026-07-02T18:47:15.538Z",
+      "graded": false
+    },
+    "2093": {
+      "positionId": "2093",
+      "signalRef": "mlb:401816001",
+      "sport": "mlb",
+      "match": "San Diego Padres @ Los Angeles Dodgers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 196.1,
+      "openedAt": "2026-07-02T21:31:06.886Z",
+      "graded": false
+    },
+    "2094": {
+      "positionId": "2094",
+      "signalRef": "mlb:401815997",
+      "sport": "mlb",
+      "match": "Detroit Tigers @ Texas Rangers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 196.1,
+      "openedAt": "2026-07-02T21:31:07.139Z",
+      "graded": false
+    },
+    "2095": {
+      "positionId": "2095",
+      "signalRef": "mlb:401815998",
+      "sport": "mlb",
+      "match": "Tampa Bay Rays @ Kansas City Royals",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 49.02,
+      "openedAt": "2026-07-02T21:31:07.452Z",
       "graded": false
     }
   }
