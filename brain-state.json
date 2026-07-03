@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-03T18:38:10.220Z",
-  "runs": 50,
+  "updatedAt": "2026-07-03T21:30:30.772Z",
+  "runs": 51,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -4232,6 +4232,76 @@
       ],
       "stakeUsdc": 118.58,
       "openedAt": "2026-07-03T18:38:10.010Z",
+      "graded": false
+    },
+    "2145": {
+      "positionId": "2145",
+      "signalRef": "mlb:401816005",
+      "sport": "mlb",
+      "match": "New York Mets @ Atlanta Braves",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 213.39,
+      "openedAt": "2026-07-03T21:30:29.573Z",
+      "graded": false
+    },
+    "2146": {
+      "positionId": "2146",
+      "signalRef": "mlb:401816011",
+      "sport": "mlb",
+      "match": "Miami Marlins @ Athletics",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 53.35,
+      "openedAt": "2026-07-03T21:30:29.816Z",
+      "graded": false
+    },
+    "2147": {
+      "positionId": "2147",
+      "signalRef": "mlb:401816012",
+      "sport": "mlb",
+      "match": "Milwaukee Brewers @ Arizona Diamondbacks",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 53.35,
+      "openedAt": "2026-07-03T21:30:30.061Z",
+      "graded": false
+    },
+    "2148": {
+      "positionId": "2148",
+      "signalRef": "mlb:401816008",
+      "sport": "mlb",
+      "match": "Tampa Bay Rays @ Houston Astros",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 53.35,
+      "openedAt": "2026-07-03T21:30:30.354Z",
       "graded": false
     }
   }
