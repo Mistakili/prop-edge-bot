@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T18:12:43.320Z",
-  "runs": 52,
+  "updatedAt": "2026-07-04T21:12:36.498Z",
+  "runs": 53,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -4446,6 +4446,77 @@
       ],
       "stakeUsdc": 127.07,
       "openedAt": "2026-07-04T18:12:42.982Z",
+      "graded": false
+    },
+    "2202": {
+      "positionId": "2202",
+      "signalRef": "mlb:401816028",
+      "sport": "mlb",
+      "match": "San Diego Padres @ Los Angeles Dodgers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 228.71,
+      "openedAt": "2026-07-04T21:12:35.708Z",
+      "graded": false
+    },
+    "2203": {
+      "positionId": "2203",
+      "signalRef": "mlb:401816016",
+      "sport": "mlb",
+      "match": "Chicago White Sox @ Cleveland Guardians",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 228.71,
+      "openedAt": "2026-07-04T21:12:35.890Z",
+      "graded": false
+    },
+    "2204": {
+      "positionId": "2204",
+      "signalRef": "mlb:401816027",
+      "sport": "mlb",
+      "match": "Milwaukee Brewers @ Arizona Diamondbacks",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 57.18,
+      "openedAt": "2026-07-04T21:12:36.098Z",
+      "graded": false
+    },
+    "2205": {
+      "positionId": "2205",
+      "signalRef": "mlb:401816024",
+      "sport": "mlb",
+      "match": "San Francisco Giants @ Colorado Rockies",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 57.18,
+      "openedAt": "2026-07-04T21:12:36.285Z",
       "graded": false
     }
   }
