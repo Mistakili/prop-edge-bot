@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T18:14:39.698Z",
-  "runs": 54,
+  "updatedAt": "2026-07-05T21:18:26.578Z",
+  "runs": 55,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -4720,6 +4720,40 @@
       ],
       "stakeUsdc": 62.98,
       "openedAt": "2026-07-05T18:14:39.308Z",
+      "graded": false
+    },
+    "2266": {
+      "positionId": "2266",
+      "signalRef": "mlb:401816043",
+      "sport": "mlb",
+      "match": "San Diego Padres @ Los Angeles Dodgers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 226.73,
+      "openedAt": "2026-07-05T21:18:25.906Z",
+      "graded": false
+    },
+    "2267": {
+      "positionId": "2267",
+      "signalRef": "mlb:401816040",
+      "sport": "mlb",
+      "match": "Boston Red Sox @ Los Angeles Angels",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away"
+      ],
+      "stakeUsdc": 56.68,
+      "openedAt": "2026-07-05T21:18:26.202Z",
       "graded": false
     }
   }
