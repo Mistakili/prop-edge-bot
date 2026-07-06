@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-06T19:04:03.934Z",
-  "runs": 56,
+  "updatedAt": "2026-07-06T21:45:34.068Z",
+  "runs": 57,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -4929,6 +4929,41 @@
       ],
       "stakeUsdc": 179.22,
       "openedAt": "2026-07-06T19:04:03.547Z",
+      "graded": false
+    },
+    "2304": {
+      "positionId": "2304",
+      "signalRef": "mlb:401816047",
+      "sport": "mlb",
+      "match": "New York Mets @ Atlanta Braves",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 215.07,
+      "openedAt": "2026-07-06T21:45:33.515Z",
+      "graded": false
+    },
+    "2305": {
+      "positionId": "2305",
+      "signalRef": "mlb:401816048",
+      "sport": "mlb",
+      "match": "Milwaukee Brewers @ St. Louis Cardinals",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 53.77,
+      "openedAt": "2026-07-06T21:45:33.725Z",
       "graded": false
     }
   }
