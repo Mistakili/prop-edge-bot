@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-07T19:14:11.001Z",
-  "runs": 58,
+  "updatedAt": "2026-07-07T21:39:48.799Z",
+  "runs": 59,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -5163,6 +5163,57 @@
       ],
       "stakeUsdc": 57.78,
       "openedAt": "2026-07-07T19:14:10.671Z",
+      "graded": false
+    },
+    "2357": {
+      "positionId": "2357",
+      "signalRef": "mlb:401816066",
+      "sport": "mlb",
+      "match": "Colorado Rockies @ Los Angeles Dodgers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 208.1,
+      "openedAt": "2026-07-07T21:39:48.214Z",
+      "graded": false
+    },
+    "2358": {
+      "positionId": "2358",
+      "signalRef": "mlb:401816060",
+      "sport": "mlb",
+      "match": "Seattle Mariners @ Miami Marlins",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 208.1,
+      "openedAt": "2026-07-07T21:39:48.393Z",
+      "graded": false
+    },
+    "2359": {
+      "positionId": "2359",
+      "signalRef": "mlb:401816061",
+      "sport": "mlb",
+      "match": "Los Angeles Angels @ Texas Rangers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 104.06,
+      "openedAt": "2026-07-07T21:39:48.567Z",
       "graded": false
     }
   }
