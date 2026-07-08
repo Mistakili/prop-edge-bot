@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-08T18:42:05.985Z",
-  "runs": 60,
+  "updatedAt": "2026-07-08T21:22:17.540Z",
+  "runs": 61,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -5429,6 +5429,59 @@
       ],
       "stakeUsdc": 58.3,
       "openedAt": "2026-07-08T18:42:05.620Z",
+      "graded": false
+    },
+    "2408": {
+      "positionId": "2408",
+      "signalRef": "mlb:401816068",
+      "sport": "mlb",
+      "match": "Athletics @ Detroit Tigers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 209.88,
+      "openedAt": "2026-07-08T21:22:16.754Z",
+      "graded": false
+    },
+    "2409": {
+      "positionId": "2409",
+      "signalRef": "mlb:401816073",
+      "sport": "mlb",
+      "match": "New York Yankees @ Tampa Bay Rays",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 209.88,
+      "openedAt": "2026-07-08T21:22:17.003Z",
+      "graded": false
+    },
+    "2410": {
+      "positionId": "2410",
+      "signalRef": "mlb:401816075",
+      "sport": "mlb",
+      "match": "Seattle Mariners @ Miami Marlins",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge_no_clear_signal",
+        "edge_strong_home",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 104.94,
+      "openedAt": "2026-07-08T21:22:17.212Z",
       "graded": false
     }
   }
