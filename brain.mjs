@@ -33,6 +33,7 @@ export const FACTOR_BASE = {
   espn_injury_edge_home: 4,
   espn_injury_edge_away: 4,
   soccer_home_dog_skeptic: 6,
+  soccer_strong_skeptic: 10,
 };
 
 export function normalizeFactor(reason) {

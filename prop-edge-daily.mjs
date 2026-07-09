@@ -18,6 +18,7 @@ import {
 } from "./brain.mjs";
 import { enrichResearch, clearResearchCache } from "./research-extra.mjs";
 import { resolveBetDecision, computeStakePct, computeMaxExposurePct } from "./decision.mjs";
+import { shouldSkipSignal, recoveryPhase } from "./filters.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const config = JSON.parse(readFileSync(join(__dirname, "prop-edge-config.json"), "utf8"));
@@ -284,7 +285,7 @@ async function main() {
     research: [],
   };
 
-  console.log(`[prop-edge] ${startedAt} — ${displayName} (self-improving mode, run #${brain.runs})`);
+  console.log(`[prop-edge] ${startedAt} — ${displayName} (climb-mode, run #${brain.runs})`);
 
   // ── Learn from settled picks first ──
   let settledPositions = [];
@@ -309,8 +310,11 @@ async function main() {
   const me = await ensureDisplayName();
   const stats = me.stats ?? {};
   const bank = stats.bankUsdc ?? 10000;
+  const phase = recoveryPhase(stats, strategy);
   summary.bankBefore = bank;
   summary.statsBefore = stats;
+  summary.phase = phase;
+  console.log(`[prop-edge] phase=${phase} bank=$${bank.toFixed(0)} roi=${(stats.roiPct ?? 0).toFixed(1)}% settled=${stats.settledCount ?? 0}`);
 
   const [edgeData, { signals = [] }, { positions: openPositions = [] }] = await Promise.all([
     fetchEdgeResearch(),
@@ -366,15 +370,28 @@ async function main() {
       continue;
     }
 
+    const skipReason = shouldSkipSignal(propSignal, research, stats, strategy, openPositions.length);
+    if (skipReason) {
+      summary.skipped.push({ signalRef: ref, reason: skipReason, sport: propSignal.sport, strength: propSignal.edgeStrength });
+      continue;
+    }
+
     const decision = resolveBetDecision(research, propSignal, signals.length, brain, stats, strategy);
     candidates.push({ propSignal, research, decision });
   }
 
-  const sportRank = new Map(strategy.sportPriority.map((s, i) => [s, i]));
+  const sportRank = new Map(["mlb", "nba", "nhl", "soccer", "fifa"].map((s, i) => [s, i]));
   candidates.sort((a, b) => {
-    const confDiff = b.decision.effectiveConfidence - a.decision.effectiveConfidence;
-    if (confDiff !== 0) return confDiff;
-    return (sportRank.get(a.propSignal.sport) ?? 99) - (sportRank.get(b.propSignal.sport) ?? 99);
+    const score = (c) => {
+      let s = c.decision.effectiveConfidence;
+      if (c.propSignal.sport === "mlb") s += 20;
+      if (c.propSignal.edgeStrength === "STRONG") s += 15;
+      if (c.research.supplementalConfirmsAgree) s += 12;
+      if (c.decision.action === "FADE") s += 8;
+      if (c.propSignal.confidence >= 60) s += 5;
+      return s;
+    };
+    return score(b) - score(a);
   });
 
   const alwaysPlay = strategy.alwaysPlaySignals !== false;

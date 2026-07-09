@@ -89,7 +89,9 @@ function applyEspnFactors(research, espn, propSignal, brain) {
   if (awayLoad >= homeLoad + 3) addToResearch(research, "home", "espn_injury_edge_home", "espn_injury_edge_home", brain);
 
   const competition = espn.header?.competitions?.[0];
-  if (competition?.status?.type?.state === "post" && competition.status.type.completed) {
+  const isFinal =
+    competition?.status?.type?.state === "post" && competition.status.type.completed;
+  if (isFinal) {
     research.supplemental.push({ layer: "tier2", reason: "espn_game_already_final", skip: true });
   }
 
@@ -98,6 +100,7 @@ function applyEspnFactors(research, espn, propSignal, brain) {
     awayProjection: awayPct || null,
     injuries: inj,
     status: competition?.status?.type?.description ?? null,
+    skip: isFinal ?? false,
   };
 }
 
@@ -106,8 +109,11 @@ function applySoccerSkepticism(research, propSignal, brain, strategy) {
   const edgeSide = propSignal.side;
   const lowConf = (propSignal.confidence ?? 0) < (strategy.soccerSkepticMaxConfidence ?? 35);
 
-  if (edgeSide === "home" && lowConf && propSignal.edgeStrength === "MODERATE") {
+  if (edgeSide === "home" && lowConf) {
     addToResearch(research, "away", "soccer_home_dog_skeptic", "soccer_home_dog_skeptic", brain);
+  }
+  if (propSignal.edgeStrength === "STRONG") {
+    addToResearch(research, edgeSide === "home" ? "away" : "home", "soccer_strong_skeptic", "soccer_strong_skeptic", brain);
   }
 }
 

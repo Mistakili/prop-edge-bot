@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-08T21:22:17.540Z",
-  "runs": 61,
+  "updatedAt": "2026-07-09T02:12:16.038Z",
+  "runs": 62,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
     "agreeStakeMultiplier": 0.9520491803278688,
     "minConfidenceAgree": 15,
-    "minConfidenceFade": 10
+    "minConfidenceFade": 7
   },
   "factors": {
     "home_field_mlb": {
