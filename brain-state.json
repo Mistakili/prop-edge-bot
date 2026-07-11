@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-11T18:05:12.324Z",
-  "runs": 66,
+  "updatedAt": "2026-07-11T21:03:15.668Z",
+  "runs": 67,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9586206896551723,
+    "agreeStakeMultiplier": 0.9595419847328244,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -48,7 +48,7 @@
   },
   "decisions": {
     "agree": {
-      "wins": 135,
+      "wins": 136,
       "losses": 126,
       "pushes": 0
     },
@@ -5716,6 +5716,27 @@
       ],
       "stakeUsdc": 32.6,
       "openedAt": "2026-07-11T18:05:11.947Z",
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 29.6334,
+      "settledAt": "2026-07-11T20:28:33.324Z"
+    },
+    "2484": {
+      "positionId": "2484",
+      "signalRef": "mlb:401816122",
+      "sport": "mlb",
+      "match": "Houston Astros @ Texas Rangers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.25,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 48.49,
+      "openedAt": "2026-07-11T21:03:15.287Z",
       "graded": false
     }
   }
