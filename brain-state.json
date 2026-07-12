@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-12T00:06:12.932Z",
-  "runs": 68,
+  "updatedAt": "2026-07-12T18:07:25.251Z",
+  "runs": 69,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9622641509433962,
+    "agreeStakeMultiplier": 0.9611940298507462,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -48,8 +48,8 @@
   },
   "decisions": {
     "agree": {
-      "wins": 139,
-      "losses": 126,
+      "wins": 140,
+      "losses": 128,
       "pushes": 0
     },
     "fade": {
@@ -5623,7 +5623,10 @@
       ],
       "stakeUsdc": 97.81,
       "openedAt": "2026-07-11T18:05:10.603Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -97.81,
+      "settledAt": "2026-07-12T04:05:34.724Z"
     },
     "2479": {
       "positionId": "2479",
@@ -5641,7 +5644,10 @@
       ],
       "stakeUsdc": 97.81,
       "openedAt": "2026-07-11T18:05:10.856Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 88.90929,
+      "settledAt": "2026-07-12T01:22:10.723Z"
     },
     "2480": {
       "positionId": "2480",
@@ -5746,6 +5752,119 @@
       ],
       "stakeUsdc": 48.49,
       "openedAt": "2026-07-11T21:03:15.287Z",
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -48.49,
+      "settledAt": "2026-07-12T02:07:10.006Z"
+    },
+    "2522": {
+      "positionId": "2522",
+      "signalRef": "mlb:401816137",
+      "sport": "mlb",
+      "match": "Houston Astros @ Texas Rangers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge",
+        "edge_strong_home",
+        "research_disagrees_downsize",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 101.39,
+      "openedAt": "2026-07-12T18:07:23.880Z",
+      "graded": false
+    },
+    "2523": {
+      "positionId": "2523",
+      "signalRef": "mlb:401816134",
+      "sport": "mlb",
+      "match": "Los Angeles Angels @ Minnesota Twins",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge",
+        "edge_strong_home",
+        "research_disagrees_downsize",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 101.39,
+      "openedAt": "2026-07-12T18:07:24.100Z",
+      "graded": false
+    },
+    "2524": {
+      "positionId": "2524",
+      "signalRef": "mlb:401816139",
+      "sport": "mlb",
+      "match": "Colorado Rockies @ San Francisco Giants",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 9.192307692307692,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home",
+        "espn_predictor_home"
+      ],
+      "stakeUsdc": 54.08,
+      "openedAt": "2026-07-12T18:07:24.315Z",
+      "graded": false
+    },
+    "2525": {
+      "positionId": "2525",
+      "signalRef": "mlb:401816138",
+      "sport": "mlb",
+      "match": "Arizona Diamondbacks @ Los Angeles Dodgers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 9.192307692307692,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home",
+        "espn_predictor_home"
+      ],
+      "stakeUsdc": 54.08,
+      "openedAt": "2026-07-12T18:07:24.536Z",
+      "graded": false
+    },
+    "2526": {
+      "positionId": "2526",
+      "signalRef": "mlb:401816135",
+      "sport": "mlb",
+      "match": "Athletics @ Chicago White Sox",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.25,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 54.08,
+      "openedAt": "2026-07-12T18:07:24.760Z",
+      "graded": false
+    },
+    "2527": {
+      "positionId": "2527",
+      "signalRef": "mlb:401816140",
+      "sport": "mlb",
+      "match": "Toronto Blue Jays @ San Diego Padres",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.25,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 54.08,
+      "openedAt": "2026-07-12T18:07:24.968Z",
       "graded": false
     }
   }
