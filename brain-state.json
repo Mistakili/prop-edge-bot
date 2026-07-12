@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-11T21:03:15.668Z",
-  "runs": 67,
+  "updatedAt": "2026-07-12T00:06:12.932Z",
+  "runs": 68,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9595419847328244,
+    "agreeStakeMultiplier": 0.9622641509433962,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -48,7 +48,7 @@
   },
   "decisions": {
     "agree": {
-      "wins": 136,
+      "wins": 139,
       "losses": 126,
       "pushes": 0
     },
@@ -5659,7 +5659,10 @@
       ],
       "stakeUsdc": 97.81,
       "openedAt": "2026-07-11T18:05:11.104Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 88.90929,
+      "settledAt": "2026-07-11T22:23:39.924Z"
     },
     "2481": {
       "positionId": "2481",
@@ -5678,7 +5681,10 @@
       ],
       "stakeUsdc": 97.81,
       "openedAt": "2026-07-11T18:05:11.386Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 88.90929,
+      "settledAt": "2026-07-11T21:21:45.923Z"
     },
     "2482": {
       "positionId": "2482",
@@ -5697,7 +5703,10 @@
       ],
       "stakeUsdc": 97.81,
       "openedAt": "2026-07-11T18:05:11.687Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 88.90929,
+      "settledAt": "2026-07-11T23:11:08.324Z"
     },
     "2483": {
       "positionId": "2483",
