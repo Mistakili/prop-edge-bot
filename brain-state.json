@@ -1,23 +1,23 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-12T21:05:07.675Z",
-  "runs": 70,
+  "updatedAt": "2026-07-13T00:07:16.577Z",
+  "runs": 71,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9629629629629629,
+    "agreeStakeMultiplier": 0.9645985401459853,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
   "factors": {
     "home_field_mlb": {
-      "wins": 29,
-      "losses": 19,
+      "wins": 30,
+      "losses": 20,
       "pushes": 0
     },
     "edge_strength_moderate_home": {
-      "wins": 29,
-      "losses": 19,
+      "wins": 30,
+      "losses": 20,
       "pushes": 0
     },
     "prop_stake_conviction": {
@@ -36,8 +36,8 @@
       "pushes": 0
     },
     "espn_predictor_home": {
-      "wins": 27,
-      "losses": 12,
+      "wins": 28,
+      "losses": 13,
       "pushes": 0
     },
     "espn_predictor_away": {
@@ -48,8 +48,8 @@
   },
   "decisions": {
     "agree": {
-      "wins": 142,
-      "losses": 128,
+      "wins": 145,
+      "losses": 129,
       "pushes": 0
     },
     "fade": {
@@ -5774,7 +5774,10 @@
       ],
       "stakeUsdc": 101.39,
       "openedAt": "2026-07-12T18:07:23.880Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 92.16351,
+      "settledAt": "2026-07-12T21:42:01.334Z"
     },
     "2523": {
       "positionId": "2523",
@@ -5814,7 +5817,10 @@
       ],
       "stakeUsdc": 54.08,
       "openedAt": "2026-07-12T18:07:24.315Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 49.15872,
+      "settledAt": "2026-07-12T22:31:41.941Z"
     },
     "2525": {
       "positionId": "2525",
@@ -5832,7 +5838,10 @@
       ],
       "stakeUsdc": 54.08,
       "openedAt": "2026-07-12T18:07:24.536Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -54.08,
+      "settledAt": "2026-07-12T23:05:44.081Z"
     },
     "2526": {
       "positionId": "2526",
@@ -5871,7 +5880,10 @@
       ],
       "stakeUsdc": 54.08,
       "openedAt": "2026-07-12T18:07:24.968Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 49.15872,
+      "settledAt": "2026-07-12T22:50:33.181Z"
     }
   }
 }
