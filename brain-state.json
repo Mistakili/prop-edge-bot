@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-17T18:16:02.047Z",
-  "runs": 82,
+  "updatedAt": "2026-07-17T21:06:48.180Z",
+  "runs": 83,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -6049,6 +6049,24 @@
       ],
       "stakeUsdc": 20.93,
       "openedAt": "2026-07-17T18:16:01.655Z",
+      "graded": false
+    },
+    "2587": {
+      "positionId": "2587",
+      "signalRef": "mlb:401816151",
+      "sport": "mlb",
+      "match": "Cincinnati Reds @ Colorado Rockies",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.199999999999999,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 51.38,
+      "openedAt": "2026-07-17T21:06:47.839Z",
       "graded": false
     }
   }
