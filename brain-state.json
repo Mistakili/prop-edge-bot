@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-16T18:18:14.895Z",
-  "runs": 81,
+  "updatedAt": "2026-07-17T18:16:02.047Z",
+  "runs": 82,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9645985401459853,
+    "agreeStakeMultiplier": 0.9636363636363636,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -49,7 +49,7 @@
   "decisions": {
     "agree": {
       "wins": 145,
-      "losses": 129,
+      "losses": 130,
       "pushes": 0
     },
     "fade": {
@@ -5901,6 +5901,154 @@
       ],
       "stakeUsdc": 56.3,
       "openedAt": "2026-07-15T18:18:23.959Z",
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -56.3,
+      "settledAt": "2026-07-17T09:43:53.768Z"
+    },
+    "2579": {
+      "positionId": "2579",
+      "signalRef": "mlb:401816148",
+      "sport": "mlb",
+      "match": "Miami Marlins @ Milwaukee Brewers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge",
+        "edge_strong_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 104.72,
+      "openedAt": "2026-07-17T18:15:59.765Z",
+      "graded": false
+    },
+    "2580": {
+      "positionId": "2580",
+      "signalRef": "mlb:401816146",
+      "sport": "mlb",
+      "match": "Texas Rangers @ Atlanta Braves",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge",
+        "edge_strong_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 104.72,
+      "openedAt": "2026-07-17T18:16:00.033Z",
+      "graded": false
+    },
+    "2581": {
+      "positionId": "2581",
+      "signalRef": "mlb:401816153",
+      "sport": "mlb",
+      "match": "San Francisco Giants @ Seattle Mariners",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge",
+        "edge_strong_home",
+        "research_disagrees_downsize",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 104.72,
+      "openedAt": "2026-07-17T18:16:00.278Z",
+      "graded": false
+    },
+    "2582": {
+      "positionId": "2582",
+      "signalRef": "mlb:401816149",
+      "sport": "mlb",
+      "match": "Minnesota Twins @ Chicago Cubs",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 9.071951219512194,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home",
+        "espn_predictor_home"
+      ],
+      "stakeUsdc": 55.85,
+      "openedAt": "2026-07-17T18:16:00.592Z",
+      "graded": false
+    },
+    "2583": {
+      "positionId": "2583",
+      "signalRef": "mlb:401816147",
+      "sport": "mlb",
+      "match": "Baltimore Orioles @ Houston Astros",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.199999999999999,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 55.85,
+      "openedAt": "2026-07-17T18:16:00.843Z",
+      "graded": false
+    },
+    "2584": {
+      "positionId": "2584",
+      "signalRef": "mlb:401816141",
+      "sport": "mlb",
+      "match": "Chicago White Sox @ Toronto Blue Jays",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.199999999999999,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 55.85,
+      "openedAt": "2026-07-17T18:16:01.097Z",
+      "graded": false
+    },
+    "2585": {
+      "positionId": "2585",
+      "signalRef": "mlb:401816145",
+      "sport": "mlb",
+      "match": "Tampa Bay Rays @ Boston Red Sox",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.199999999999999,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 55.85,
+      "openedAt": "2026-07-17T18:16:01.402Z",
+      "graded": false
+    },
+    "2586": {
+      "positionId": "2586",
+      "signalRef": "mlb:401816144",
+      "sport": "mlb",
+      "match": "Pittsburgh Pirates @ Cleveland Guardians",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.199999999999999,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 20.93,
+      "openedAt": "2026-07-17T18:16:01.655Z",
       "graded": false
     }
   }
