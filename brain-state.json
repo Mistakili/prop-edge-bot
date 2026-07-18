@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-18T18:05:49.667Z",
-  "runs": 85,
+  "updatedAt": "2026-07-18T21:04:28.942Z",
+  "runs": 86,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9614840989399294,
+    "agreeStakeMultiplier": 0.9623239436619717,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -48,7 +48,7 @@
   },
   "decisions": {
     "agree": {
-      "wins": 148,
+      "wins": 149,
       "losses": 135,
       "pushes": 0
     },
@@ -6182,7 +6182,10 @@
       ],
       "stakeUsdc": 55.02,
       "openedAt": "2026-07-18T18:05:48.787Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 50.01318,
+      "settledAt": "2026-07-18T21:02:33.803Z"
     },
     "2631": {
       "positionId": "2631",
@@ -6218,6 +6221,25 @@
       ],
       "stakeUsdc": 27.53,
       "openedAt": "2026-07-18T18:05:49.319Z",
+      "graded": false
+    },
+    "2638": {
+      "positionId": "2638",
+      "signalRef": "mlb:401816167",
+      "sport": "mlb",
+      "match": "Detroit Tigers @ Los Angeles Angels",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_away",
+        "research_disagrees_downsize",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 51.46,
+      "openedAt": "2026-07-18T21:04:28.554Z",
       "graded": false
     }
   }
