@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-18T21:04:28.942Z",
-  "runs": 86,
+  "updatedAt": "2026-07-19T00:04:43.862Z",
+  "runs": 87,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9623239436619717,
+    "agreeStakeMultiplier": 0.9647058823529411,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -48,8 +48,8 @@
   },
   "decisions": {
     "agree": {
-      "wins": 149,
-      "losses": 135,
+      "wins": 153,
+      "losses": 136,
       "pushes": 0
     },
     "fade": {
@@ -6109,7 +6109,10 @@
       ],
       "stakeUsdc": 103.16,
       "openedAt": "2026-07-18T18:05:47.760Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -103.16,
+      "settledAt": "2026-07-18T23:08:26.273Z"
     },
     "2627": {
       "positionId": "2627",
@@ -6127,7 +6130,10 @@
       ],
       "stakeUsdc": 103.16,
       "openedAt": "2026-07-18T18:05:48.048Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 93.77244,
+      "settledAt": "2026-07-18T22:54:39.319Z"
     },
     "2628": {
       "positionId": "2628",
@@ -6145,7 +6151,10 @@
       ],
       "stakeUsdc": 103.16,
       "openedAt": "2026-07-18T18:05:48.292Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 93.77244,
+      "settledAt": "2026-07-18T22:44:50.970Z"
     },
     "2629": {
       "positionId": "2629",
@@ -6164,7 +6173,10 @@
       ],
       "stakeUsdc": 103.16,
       "openedAt": "2026-07-18T18:05:48.557Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 93.77244,
+      "settledAt": "2026-07-18T23:17:10.771Z"
     },
     "2630": {
       "positionId": "2630",
@@ -6221,7 +6233,10 @@
       ],
       "stakeUsdc": 27.53,
       "openedAt": "2026-07-18T18:05:49.319Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 25.02477,
+      "settledAt": "2026-07-19T00:00:01.239Z"
     },
     "2638": {
       "positionId": "2638",
@@ -6240,6 +6255,25 @@
       ],
       "stakeUsdc": 51.46,
       "openedAt": "2026-07-18T21:04:28.554Z",
+      "graded": false
+    },
+    "2644": {
+      "positionId": "2644",
+      "signalRef": "mlb:401816159",
+      "sport": "mlb",
+      "match": "Pittsburgh Pirates @ Cleveland Guardians",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge",
+        "edge_strong_home",
+        "research_disagrees_downsize",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 105.37,
+      "openedAt": "2026-07-19T00:04:43.549Z",
       "graded": false
     }
   }
