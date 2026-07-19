@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-19T18:06:14.883Z",
-  "runs": 88,
+  "updatedAt": "2026-07-19T21:05:39.119Z",
+  "runs": 89,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9671232876712328,
+    "agreeStakeMultiplier": 0.9679180887372013,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -48,7 +48,7 @@
   },
   "decisions": {
     "agree": {
-      "wins": 156,
+      "wins": 157,
       "losses": 136,
       "pushes": 0
     },
@@ -6373,7 +6373,10 @@
       ],
       "stakeUsdc": 58.59,
       "openedAt": "2026-07-19T18:06:14.038Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 53.25831,
+      "settledAt": "2026-07-19T21:04:01.674Z"
     },
     "2717": {
       "positionId": "2717",
@@ -6410,6 +6413,25 @@
       ],
       "stakeUsdc": 58.59,
       "openedAt": "2026-07-19T18:06:14.520Z",
+      "graded": false
+    },
+    "2719": {
+      "positionId": "2719",
+      "signalRef": "mlb:401816172",
+      "sport": "mlb",
+      "match": "Los Angeles Dodgers @ New York Yankees",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_away",
+        "research_disagrees_downsize",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 55.38,
+      "openedAt": "2026-07-19T21:05:38.806Z",
       "graded": false
     }
   }
