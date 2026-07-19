@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-19T00:04:43.862Z",
-  "runs": 87,
+  "updatedAt": "2026-07-19T18:06:14.883Z",
+  "runs": 88,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9647058823529411,
+    "agreeStakeMultiplier": 0.9671232876712328,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -48,7 +48,7 @@
   },
   "decisions": {
     "agree": {
-      "wins": 153,
+      "wins": 156,
       "losses": 136,
       "pushes": 0
     },
@@ -6215,7 +6215,10 @@
       ],
       "stakeUsdc": 55.02,
       "openedAt": "2026-07-18T18:05:49.077Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 50.01318,
+      "settledAt": "2026-07-19T03:22:24.074Z"
     },
     "2632": {
       "positionId": "2632",
@@ -6255,7 +6258,10 @@
       ],
       "stakeUsdc": 51.46,
       "openedAt": "2026-07-18T21:04:28.554Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 46.77714,
+      "settledAt": "2026-07-19T04:43:40.670Z"
     },
     "2644": {
       "positionId": "2644",
@@ -6274,6 +6280,136 @@
       ],
       "stakeUsdc": 105.37,
       "openedAt": "2026-07-19T00:04:43.549Z",
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 95.78133,
+      "settledAt": "2026-07-19T03:22:36.070Z"
+    },
+    "2712": {
+      "positionId": "2712",
+      "signalRef": "mlb:401816185",
+      "sport": "mlb",
+      "match": "Washington Nationals @ Athletics",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4.605882352941175,
+      "reasons": [
+        "follow_edge",
+        "edge_strong_away",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 109.85,
+      "openedAt": "2026-07-19T18:06:13.032Z",
+      "graded": false
+    },
+    "2713": {
+      "positionId": "2713",
+      "signalRef": "mlb:401816183",
+      "sport": "mlb",
+      "match": "San Francisco Giants @ Seattle Mariners",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge",
+        "edge_strong_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 109.85,
+      "openedAt": "2026-07-19T18:06:13.279Z",
+      "graded": false
+    },
+    "2714": {
+      "positionId": "2714",
+      "signalRef": "mlb:401816179",
+      "sport": "mlb",
+      "match": "Minnesota Twins @ Chicago Cubs",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 8.808823529411764,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 58.59,
+      "openedAt": "2026-07-19T18:06:13.541Z",
+      "graded": false
+    },
+    "2715": {
+      "positionId": "2715",
+      "signalRef": "mlb:401816184",
+      "sport": "mlb",
+      "match": "St. Louis Cardinals @ Arizona Diamondbacks",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 8.808823529411764,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 58.59,
+      "openedAt": "2026-07-19T18:06:13.786Z",
+      "graded": false
+    },
+    "2716": {
+      "positionId": "2716",
+      "signalRef": "mlb:401816178",
+      "sport": "mlb",
+      "match": "Miami Marlins @ Milwaukee Brewers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.0588235294117645,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 58.59,
+      "openedAt": "2026-07-19T18:06:14.038Z",
+      "graded": false
+    },
+    "2717": {
+      "positionId": "2717",
+      "signalRef": "mlb:401816181",
+      "sport": "mlb",
+      "match": "Cincinnati Reds @ Colorado Rockies",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 5.0588235294117645,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 58.59,
+      "openedAt": "2026-07-19T18:06:14.276Z",
+      "graded": false
+    },
+    "2718": {
+      "positionId": "2718",
+      "signalRef": "mlb:401816182",
+      "sport": "mlb",
+      "match": "Detroit Tigers @ Los Angeles Angels",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_away",
+        "research_disagrees_downsize",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 58.59,
+      "openedAt": "2026-07-19T18:06:14.520Z",
       "graded": false
     }
   }
