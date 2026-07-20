@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-19T21:05:39.119Z",
-  "runs": 89,
+  "updatedAt": "2026-07-20T00:07:50.575Z",
+  "runs": 90,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9679180887372013,
+    "agreeStakeMultiplier": 0.9692307692307691,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -48,8 +48,8 @@
   },
   "decisions": {
     "agree": {
-      "wins": 157,
-      "losses": 136,
+      "wins": 161,
+      "losses": 138,
       "pushes": 0
     },
     "fade": {
@@ -6301,7 +6301,10 @@
       ],
       "stakeUsdc": 109.85,
       "openedAt": "2026-07-19T18:06:13.032Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 99.85365,
+      "settledAt": "2026-07-19T22:53:35.571Z"
     },
     "2713": {
       "positionId": "2713",
@@ -6319,7 +6322,10 @@
       ],
       "stakeUsdc": 109.85,
       "openedAt": "2026-07-19T18:06:13.279Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 99.85365,
+      "settledAt": "2026-07-19T22:49:38.588Z"
     },
     "2714": {
       "positionId": "2714",
@@ -6337,7 +6343,10 @@
       ],
       "stakeUsdc": 58.59,
       "openedAt": "2026-07-19T18:06:13.541Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 53.25831,
+      "settledAt": "2026-07-19T21:10:01.770Z"
     },
     "2715": {
       "positionId": "2715",
@@ -6355,7 +6364,10 @@
       ],
       "stakeUsdc": 58.59,
       "openedAt": "2026-07-19T18:06:13.786Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 53.25831,
+      "settledAt": "2026-07-19T23:44:49.109Z"
     },
     "2716": {
       "positionId": "2716",
@@ -6394,7 +6406,10 @@
       ],
       "stakeUsdc": 58.59,
       "openedAt": "2026-07-19T18:06:14.276Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -58.59,
+      "settledAt": "2026-07-19T21:54:58.569Z"
     },
     "2718": {
       "positionId": "2718",
@@ -6413,7 +6428,10 @@
       ],
       "stakeUsdc": 58.59,
       "openedAt": "2026-07-19T18:06:14.520Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -58.59,
+      "settledAt": "2026-07-19T22:59:32.573Z"
     },
     "2719": {
       "positionId": "2719",
