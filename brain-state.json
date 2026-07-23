@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-20T00:07:50.575Z",
-  "runs": 90,
+  "updatedAt": "2026-07-23T18:22:03.467Z",
+  "runs": 91,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9692307692307691,
+    "agreeStakeMultiplier": 0.9683333333333333,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -49,7 +49,7 @@
   "decisions": {
     "agree": {
       "wins": 161,
-      "losses": 138,
+      "losses": 139,
       "pushes": 0
     },
     "fade": {
@@ -6450,6 +6450,62 @@
       ],
       "stakeUsdc": 55.38,
       "openedAt": "2026-07-19T21:05:38.806Z",
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -55.38,
+      "settledAt": "2026-07-20T02:14:34.343Z"
+    },
+    "2787": {
+      "positionId": "2787",
+      "signalRef": "mlb:401816231",
+      "sport": "mlb",
+      "match": "Kansas City Royals @ Detroit Tigers",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge",
+        "edge_strong_home"
+      ],
+      "stakeUsdc": 150.54,
+      "openedAt": "2026-07-23T18:22:02.630Z",
+      "graded": false
+    },
+    "2788": {
+      "positionId": "2788",
+      "signalRef": "mlb:401881162",
+      "sport": "mlb",
+      "match": "Arizona Diamondbacks @ St. Louis Cardinals",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 8.808823529411764,
+      "reasons": [
+        "home_field_mlb",
+        "edge_strength_moderate_home",
+        "espn_predictor_home"
+      ],
+      "stakeUsdc": 60.08,
+      "openedAt": "2026-07-23T18:22:02.849Z",
+      "graded": false
+    },
+    "2789": {
+      "positionId": "2789",
+      "signalRef": "mlb:401816234",
+      "sport": "mlb",
+      "match": "Tampa Bay Rays @ Toronto Blue Jays",
+      "edgePick": "away",
+      "ourPick": "away",
+      "fadedEdge": false,
+      "confidence": 4,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_away",
+        "research_disagrees_downsize"
+      ],
+      "stakeUsdc": 60.08,
+      "openedAt": "2026-07-23T18:22:03.154Z",
       "graded": false
     }
   }
