@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-23T21:19:53.723Z",
-  "runs": 92,
+  "updatedAt": "2026-07-24T00:08:05.084Z",
+  "runs": 93,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9683333333333333,
+    "agreeStakeMultiplier": 0.9674418604651163,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -49,7 +49,7 @@
   "decisions": {
     "agree": {
       "wins": 161,
-      "losses": 139,
+      "losses": 140,
       "pushes": 0
     },
     "fade": {
@@ -6506,7 +6506,10 @@
       ],
       "stakeUsdc": 60.08,
       "openedAt": "2026-07-23T18:22:03.154Z",
-      "graded": false
+      "graded": true,
+      "outcome": "loss",
+      "pnlUsdc": -60.08,
+      "settledAt": "2026-07-23T21:22:27.342Z"
     }
   }
 }
