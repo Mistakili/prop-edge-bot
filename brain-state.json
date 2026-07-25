@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-24T21:19:34.540Z",
-  "runs": 94,
+  "updatedAt": "2026-07-25T00:13:11.168Z",
+  "runs": 95,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
@@ -6636,6 +6636,24 @@
       ],
       "stakeUsdc": 44.26,
       "openedAt": "2026-07-24T21:19:34.175Z",
+      "graded": false
+    },
+    "2829": {
+      "positionId": "2829",
+      "signalRef": "mlb:401816245",
+      "sport": "mlb",
+      "match": "Cincinnati Reds @ St. Louis Cardinals",
+      "edgePick": "home",
+      "ourPick": "home",
+      "fadedEdge": false,
+      "confidence": 8.556797853309481,
+      "reasons": [
+        "follow_edge",
+        "edge_moderate_home",
+        "survival_sizing"
+      ],
+      "stakeUsdc": 52.99,
+      "openedAt": "2026-07-25T00:13:10.788Z",
       "graded": false
     }
   }
