@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-26T18:10:46.828Z",
-  "runs": 96,
+  "updatedAt": "2026-07-26T21:09:58.774Z",
+  "runs": 97,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9668810289389067,
+    "agreeStakeMultiplier": 0.9683706070287539,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -48,7 +48,7 @@
   },
   "decisions": {
     "agree": {
-      "wins": 166,
+      "wins": 168,
       "losses": 145,
       "pushes": 0
     },
@@ -6695,7 +6695,10 @@
       ],
       "stakeUsdc": 197.83,
       "openedAt": "2026-07-26T18:10:45.245Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 179.82747,
+      "settledAt": "2026-07-26T20:56:54.671Z"
     },
     "2878": {
       "positionId": "2878",
@@ -6731,7 +6734,10 @@
       ],
       "stakeUsdc": 177.98,
       "openedAt": "2026-07-26T18:10:45.706Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 161.78382,
+      "settledAt": "2026-07-26T21:02:06.718Z"
     },
     "2880": {
       "positionId": "2880",
