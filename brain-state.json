@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-27T18:44:40.049Z",
-  "runs": 99,
+  "updatedAt": "2026-07-27T21:22:57.374Z",
+  "runs": 100,
   "meta": {
     "minConfidenceToBet": 15,
     "fadeStakeMultiplier": 0.7,
-    "agreeStakeMultiplier": 0.9672955974842767,
+    "agreeStakeMultiplier": 0.9680250783699059,
     "minConfidenceAgree": 15,
     "minConfidenceFade": 7
   },
@@ -48,7 +48,7 @@
   },
   "decisions": {
     "agree": {
-      "wins": 170,
+      "wins": 171,
       "losses": 148,
       "pushes": 0
     },
@@ -6961,7 +6961,10 @@
       ],
       "stakeUsdc": 62.99,
       "openedAt": "2026-07-27T18:44:39.082Z",
-      "graded": false
+      "graded": true,
+      "outcome": "win",
+      "pnlUsdc": 57.25791,
+      "settledAt": "2026-07-27T21:07:05.513Z"
     },
     "2927": {
       "positionId": "2927",
